@@ -1,0 +1,12 @@
+__pycache__/
+results/
+out.txt
+.agents/
+.vscode/
+.venv/
+venv/
+*.pyc
+*.pyo
+*.pyd
+.db
+.DS_Store

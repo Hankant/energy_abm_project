@@ -1,0 +1,6 @@
+id,location,income_level,house_area,has_ac,has_ev,env_awareness,price_sensitivity
+1,大湾区,低,60,1,0,低,高
+2,大湾区,高,180,3,1,高,低
+3,长三角,中,90,2,0,中,中
+4,长三角,低,50,1,0,低,高
+5,长三角,高,200,4,1,高,低
