@@ -1,0 +1,8 @@
+﻿Title: Evaluating policy mix strategies for the energy transition using an agent-based macroeconomic model
+Year: 2024
+Language: English
+Type: journal article
+URL: https://www.sciencedirect.com/science/article/pii/S0301421524002969
+
+Use:
+与你的项目高度相近，可用于支持单一政策与组合政策比较，以及组合政策通常优于单一工具的论点。

@@ -1,0 +1,8 @@
+﻿Title: A framework for policy mix analysis: assessing energy poverty policies
+Year: 2023
+Language: English
+Type: journal article
+URL: https://www.tandfonline.com/doi/full/10.1080/21606544.2022.2153744
+
+Use:
+适合用于能源社会政策与公平性分析，尤其是低收入群体保护、能源贫困与 policy mix 落地。
