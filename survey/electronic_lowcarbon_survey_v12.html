@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>极端天气下居民低碳用电与低碳产品采用意愿调查</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--text:#202124;--muted:#5f6368;--border:#dfe3eb;--primary:#2563eb;--danger:#dc2626;--success:#15803d;--warning:#b45309;--radius:16px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",Arial,sans-serif;line-height:1.65}.wrap{width:min(1120px,calc(100% - 28px));margin:0 auto;padding:24px 0 60px}
+header{background:linear-gradient(135deg,#1d4ed8,#0284c7);color:#fff;border-radius:22px;padding:28px;margin-bottom:18px}h1{margin:0 0 10px;font-size:28px;line-height:1.25}h2{margin:0 0 12px;font-size:22px}h3{margin:18px 0 8px;font-size:18px}.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin:16px 0;box-shadow:0 8px 24px rgba(15,23,42,.06)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}@media(max-width:760px){.grid,.grid3{grid-template-columns:1fr}h1{font-size:23px}.card{padding:17px}}
+label.field{display:block;font-weight:700;margin-bottom:6px}input[type=number],input[type=text],select,textarea{width:100%;border:1px solid var(--border);border-radius:12px;padding:10px 12px;font-size:15px;background:#fff}input:focus,select:focus,textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+.hint{font-size:14px;color:var(--muted)}.required:after{content:" *";color:var(--danger)}.notice{border-left:5px solid var(--primary);background:#e8f0ff;padding:14px 16px;border-radius:12px;margin:12px 0}.notice.warn{border-left-color:var(--warning);background:#fff7ed}.notice.danger{border-left-color:var(--danger);background:#fef2f2}.notice.ok{border-left-color:var(--success);background:#f0fdf4}.notice.gray{border-left-color:#64748b;background:#f8fafc}
+.options{display:grid;gap:8px;margin-top:8px}.option{display:flex;gap:8px;align-items:flex-start;border:1px solid var(--border);border-radius:12px;padding:10px;background:#fff}.option input{margin-top:6px}.scale{display:flex;gap:8px;flex-wrap:wrap}.scale label{min-width:90px;flex:1;border:1px solid var(--border);border-radius:12px;padding:9px;text-align:center;background:#fff}.scale input{display:block;margin:0 auto 4px}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:12px 0}@media(max-width:920px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.metrics{grid-template-columns:1fr}}
+.metric{border:1px solid var(--border);border-radius:14px;padding:13px;background:#fbfcff}.metric .l{color:var(--muted);font-size:13px}.metric .v{font-size:24px;font-weight:800}.metric .u{font-size:13px;color:var(--muted);font-weight:500;margin-left:3px}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:#fff}th,td{border:1px solid var(--border);padding:9px;text-align:left;vertical-align:top}th{background:#f1f5f9}button{border:0;border-radius:12px;padding:11px 15px;font-weight:700;cursor:pointer;font-size:15px;margin-right:8px;margin-top:8px}.primary{background:var(--primary);color:#fff}.secondary{background:#e5e7eb;color:#111827}.ghost{background:#fff;border:1px solid var(--border);color:#111827}pre{white-space:pre-wrap;word-break:break-word;background:#0f172a;color:#e2e8f0;border-radius:14px;padding:15px;display:none}.small{font-size:13px;color:var(--muted)}.scenario{border:1px solid var(--border);border-radius:16px;padding:16px;margin:18px 0;background:#fff}.scenario h3{margin-top:0}.divider{height:1px;background:var(--border);margin:18px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>极端天气下居民低碳用电与低碳产品采用意愿调查</h1>
+<p>电子问卷原型：根据家庭月用电量、电器数量和账单月份，自动估算不同极热持续时间下的电费、补贴收益、节电收益与回本时间。</p>
+<p class="small" style="color:rgba(255,255,255,.88)">正式调查前，请将电价、补贴、产品价格和节电比例替换为目标地区的最新政策参数。</p>
+</header>
+
+<form id="survey">
+<section class="card">
+<h2>知情同意</h2>
+<p>本问卷用于学术研究，匿名收集，仅用于统计分析。您可随时退出。</p>
+<label class="option"><input type="checkbox" id="consent" required> 我已阅读上述说明，并自愿参与本研究。</label>
+</section>
+
+<section class="card">
+<h2>A. 基本信息</h2>
+<div class="grid">
+<div><label class="field required">年龄</label><input id="age" type="number" min="18" max="100" required></div>
+<div><label class="field required">性别</label><select id="gender" required><option value="">请选择</option><option>男</option><option>女</option><option>其他/不便透露</option></select></div>
+<div><label class="field required">最高受教育程度</label><select id="edu" required><option value="">请选择</option><option>初中及以下</option><option>高中/中专</option><option>大专</option><option>本科</option><option>研究生及以上</option></select></div>
+<div><label class="field required">所在城市/地区</label><input id="city" type="text" placeholder="例如：长沙市/岳麓区" required></div>
+<div><label class="field required">家庭常住人口数</label><input id="hhsize" type="number" min="1" max="20" required></div>
+<div><label class="field required">家庭月总收入</label><select id="income" required><option value="">请选择</option><option>5000元以下</option><option>5001-10000元</option><option>10001-20000元</option><option>20001-30000元</option><option>30001-50000元</option><option>50000元以上</option><option>不便透露</option></select></div>
+</div>
+</section>
+
+<section class="card">
+<h2>B. 家庭能源使用</h2>
+<div class="grid">
+<div>
+<label class="field required">B1. 您家过去 1 个月的用电量</label>
+<input id="kwh" type="number" min="1" max="5000" step="1" placeholder="例如：400" required>
+<div class="hint">单位：度/千瓦时（kWh）。可参考电费账单填写。</div>
+</div>
+<div>
+<label class="field required">B2. 账单对应月份</label>
+<select id="month" required>
+<option value="">请选择</option><option value="1">1月</option><option value="2">2月</option><option value="3">3月</option><option value="4">4月</option><option value="5">5月</option><option value="6">6月</option><option value="7">7月</option><option value="8">8月</option><option value="9">9月</option><option value="10">10月</option><option value="11">11月</option><option value="12">12月</option>
+</select>
+</div>
+</div>
+<h3>家中主要电器拥有情况</h3>
+<div class="grid3">
+<div><label class="field">空调（台）</label><input id="acCount" type="number" min="0" max="20" value="1"></div>
+<div><label class="field">冰箱（台）</label><input id="fridgeCount" type="number" min="0" max="10" value="1"></div>
+<div><label class="field">热水器（台）</label><input id="heaterCount" type="number" min="0" max="10" value="1"></div>
+</div>
+</section>
+
+<section class="card">
+<h2>C. 家庭低碳用电方式偏好</h2>
+<div class="notice">这里的“节能/低碳产品”包括高能效空调、节能冰箱、热泵热水器、分布式光伏、新能源汽车等。</div>
+<h3 class="required">C1. 如果为了降低家庭用电成本和促进环保，您更倾向于哪种方式？</h3>
+<div class="options">
+<label class="option"><input type="radio" name="c1" value="saving_only" required> 主要通过节约用电、减少浪费来实现</label>
+<label class="option"><input type="radio" name="c1" value="upgrade_only"> 主要通过购买或更换节能/低碳产品来实现</label>
+<label class="option"><input type="radio" name="c1" value="both_saving"> 两种方式都会考虑，但更偏向节约用电</label>
+<label class="option"><input type="radio" name="c1" value="both_upgrade"> 两种方式都会考虑，但更偏向产品升级</label>
+</div>
+<h3 class="required">C2. “相比单纯减少用电，我更愿意通过购买或更换节能/低碳产品来提升家庭生活质量。”</h3>
+<div class="scale">
+<label><input type="radio" name="c2" value="1" required>1<br>非常不同意</label>
+<label><input type="radio" name="c2" value="2">2<br>比较不同意</label>
+<label><input type="radio" name="c2" value="3">3<br>一般</label>
+<label><input type="radio" name="c2" value="4">4<br>比较同意</label>
+<label><input type="radio" name="c2" value="5">5<br>非常同意</label>
+</div>
+</section>
+
+<section class="card">
+<h2>D. 连续 7 天极热天气下的个性化电费账单与低碳产品采用决策</h2>
+<div class="notice">假设您所在城市连续 7 天出现极热天气，日最高气温达到 35°C 及以上。系统将根据您前面填写的家庭月用电量、账单月份和电器数量，估算该情境下的用电成本与低碳产品收益。</div>
+<div class="grid">
+<div>
+<label class="field">低碳产品示例</label>
+<select id="product">
+<option value="ac">1级能效空调</option>
+<option value="fridge">1级能效冰箱</option>
+<option value="heater">热泵热水器</option>
+<option value="pv">分布式光伏系统</option>
+</select>
+</div>
+<div>
+<label class="field">说明</label>
+<div class="hint">D 与 E 中的 4 个情境均需作答，不再随机分配或手动选择实验情境。</div>
+</div>
+</div>
+<div id="calcBox7" class="notice warn">请先填写 B1 月用电量和 B2 月份，系统将自动生成 7 天极热情境估算。</div>
+<div id="scenario7"></div>
+</section>
+
+<section class="card">
+<h2>E. 连续 30 天极热天气下的个性化电费账单与低碳产品采用决策</h2>
+<div class="notice">假设您所在城市连续 30 天出现极热天气，日最高气温达到 35°C 及以上。系统将继续根据您前面填写的家庭月用电量、账单月份和电器数量，自动估算更长持续时间下的用电成本与低碳产品收益。</div>
+<div id="calcBox30" class="notice warn">请先填写 B1 月用电量和 B2 月份，系统将自动生成 30 天极热情境估算。</div>
+<div id="scenario30"></div>
+</section>
+
+<section class="card">
+<h2>F. 社会影响敏感性、接触规模与低碳规范暴露</h2>
+<div class="notice gray">请根据您平时在家庭用电、节能、电费和电器购买方面与亲友、邻居、同事或线上联系人交流的情况作答。</div>
+
+<h3 class="required">F1. 个人社会影响敏感性</h3>
+<p class="hint">以下题项用于了解您在家庭用电和电器购买决策上是否容易受他人影响。1=非常不同意，7=非常同意。</p>
+<div id="socialQuestions"></div>
+
+<h3 class="required">F2. 社会接触规模</h3>
+<label class="field required">在过去 1 个月，您能想到多少位会影响您家庭用电方式或电器购买决策的人？</label>
+<select id="socialCount" required>
+<option value="">请选择</option>
+<option value="0">0 人</option>
+<option value="1_2">1–2 人</option>
+<option value="3_5">3–5 人</option>
+<option value="6_10">6–10 人</option>
+<option value="10_plus">10 人以上</option>
+</select>
+<p class="hint">这里的“影响”包括提供建议、分享使用经验、推荐产品、讨论电费或节能方法等。</p>
+
+<h3 class="required">F3. 低碳规范暴露程度</h3>
+<label class="field required">在这些可能影响您的人中，支持节电、购买节能电器或采用低碳产品的人大约占多少？</label>
+<select id="lowcarbonProp" required>
+<option value="">请选择</option>
+<option value="0">几乎没有</option>
+<option value="0.25">少数人</option>
+<option value="0.50">大约一半</option>
+<option value="0.75">大多数人</option>
+<option value="1">几乎全部</option>
+<option value="unknown">不确定</option>
+</select>
+
+<div id="socialBox" class="notice warn">完成 F1–F3 后，系统将分别生成三个用于仿真建模的指标：个人社会影响敏感性、社会接触规模、低碳规范暴露程度。</div>
+</section>
+
+<section class="card">
+<h2>提交问卷</h2>
+<p class="hint">点击“生成研究数据”后，页面下方会显示 JSON 数据。正式部署时，可将这部分数据提交到服务器或问卷平台后台。</p>
+<button type="button" class="secondary" id="recalc">重新计算估算</button>
+<button type="button" class="secondary" id="download">下载 JSON</button>
+<button type="submit" class="primary">生成研究数据</button>
+<div id="msg" class="notice ok" style="display:none"></div>
+<pre id="out"></pre>
+</section>
+</form>
+</div>
+
+<script>
+const CONFIG={
+ tariff:{basePrice:.588,tier2Adder:.05,tier3Adder:.30,winterSummerMonths:[1,2,6,7,8,12],winterSummer:{tier1:200,tier2:450},springAutumn:{tier1:200,tier2:350}},
+ subsidy:{applianceRate:.15,applianceMax:1500,pvRate:.10,pvMax:3000},
+ products:{
+  ac:{label:"1级能效空调",normalPrice:3000,highPrice:4000,savingRate:.20,subsidyType:"appliance"},
+  fridge:{label:"1级能效冰箱",normalPrice:2600,highPrice:3400,savingRate:.08,subsidyType:"appliance"},
+  heater:{label:"热泵热水器",normalPrice:2200,highPrice:5200,savingRate:.15,subsidyType:"appliance"},
+  pv:{label:"分布式光伏系统",normalPrice:0,highPrice:25000,savingRate:.35,subsidyType:"pv"}
+ }
+};
+const $=id=>document.getElementById(id), yuan=n=>Number.isFinite(n)?n.toFixed(2):"--", it=n=>Number.isFinite(n)?String(Math.round(n)):"--";
+function num(id){let v=parseFloat($(id)?.value);return Number.isFinite(v)?v:null}
+function val(name){let e=document.querySelector(`[name="${name}"]:checked`);return e?e.value:null}
+function vals(name){return [...document.querySelectorAll(`[name="${name}"]:checked`)].map(e=>e.value)}
+function season(m){return CONFIG.tariff.winterSummerMonths.includes(Number(m))?"冬夏季":"春秋季"}
+function thresholds(m){return CONFIG.tariff.winterSummerMonths.includes(Number(m))?CONFIG.tariff.winterSummer:CONFIG.tariff.springAutumn}
+function bill(kwh,m){
+ if(!Number.isFinite(kwh)||!m)return null;
+ const t=thresholds(m),p1=CONFIG.tariff.basePrice,p2=p1+CONFIG.tariff.tier2Adder,p3=p1+CONFIG.tariff.tier3Adder;
+ const k1=Math.min(kwh,t.tier1),k2=Math.max(Math.min(kwh,t.tier2)-t.tier1,0),k3=Math.max(kwh-t.tier2,0);
+ const b=k1*p1+k2*p2+k3*p3,base=kwh*p1;
+ return {kwh,season:season(m),tier1:t.tier1,tier2:t.tier2,p1,p2,p3,k1,k2,k3,bill:b,baseOnly:base,penalty:b-base,tier:kwh<=t.tier1?"第一档":(kwh<=t.tier2?"第二档":"第三档")};
+}
+function subsidy(p){return p.subsidyType==="pv"?Math.min(p.highPrice*CONFIG.subsidy.pvRate,CONFIG.subsidy.pvMax):Math.min(p.highPrice*CONFIG.subsidy.applianceRate,CONFIG.subsidy.applianceMax)}
+function seasonCoef(m){m=Number(m); if([6,7,8].includes(m))return 1; if([5,9].includes(m))return .7; if([4,10].includes(m))return .4; return .2}
+function estimatedHeatIncrease(days){
+ const m=num("month"), ac=num("acCount")??0, fridge=num("fridgeCount")??0, heater=num("heaterCount")??0;
+ if(!m)return null;
+ const fullMonthRate=0.02+seasonCoef(m)*(0.06+0.06*Math.min(ac,5)+0.01*Math.min(fridge,3)+0.015*Math.min(heater,3));
+ const rate=fullMonthRate*(days/30);
+ return Math.max(0,Math.min(rate,.80));
+}
+function calcDuration(days){
+ let base=num("kwh"),m=num("month"),r=estimatedHeatIncrease(days); if(!base||!m||r===null)return null;
+ let pk=$("product").value,p=CONFIG.products[pk],heat=base*(1+r),before=bill(heat,m),after=bill(heat*(1-p.savingRate),m);
+ let sub=subsidy(p),net=p.highPrice-sub,saving=before.bill-after.bill,inc=Math.max(net-p.normalPrice,0);
+ return {days,base,m,pk,p,heat,before,after,sub,net,saving,full:saving>0?net/saving:null,inc,incPay:saving>0?inc/saving:null,heatIncreaseRate:r};
+}
+function baselineTable(d){return `<table>
+<tr><th>预计月用电量</th><td>${it(d.heat)} 度</td></tr>
+<tr><th>无额外加价时的估算电费</th><td>${yuan(d.before.baseOnly)} 元</td></tr>
+<tr><th>说明</th><td>该情境不设置购买补贴，也不设置额外惩罚性加价。</td></tr>
+</table>`}
+function penaltyTable(d){return `<table>
+<tr><th>预计月用电量</th><td>${it(d.heat)} 度</td></tr>
+<tr><th>预计进入阶梯</th><td>${d.before.tier}</td></tr>
+<tr><th>如果全部按第一档电价计算</th><td>${yuan(d.before.baseOnly)} 元</td></tr>
+<tr><th>按实际阶梯电价计算</th><td>${yuan(d.before.bill)} 元</td></tr>
+<tr><th>由于进入较高阶梯，预计多支付</th><td>${yuan(d.before.penalty)} 元</td></tr>
+</table>`}
+function productTable(d){return `<table>
+<tr><th>低碳产品示例</th><td>${d.p.label}</td></tr>
+<tr><th>普通产品参考价格</th><td>${yuan(d.p.normalPrice)} 元</td></tr>
+<tr><th>高能效/低碳产品参考价格</th><td>${yuan(d.p.highPrice)} 元</td></tr>
+<tr><th>预计补贴金额</th><td>${yuan(d.sub)} 元</td></tr>
+<tr><th>补贴后实际支付价格</th><td>${yuan(d.net)} 元</td></tr>
+<tr><th>预计节电比例</th><td>${Math.round(d.p.savingRate*100)}%</td></tr>
+<tr><th>购买前预计月电费</th><td>${yuan(d.before.bill)} 元</td></tr>
+<tr><th>购买后预计月电费</th><td>${yuan(d.after.bill)} 元</td></tr>
+<tr><th>预计每月节省电费</th><td>${yuan(d.saving)} 元</td></tr>
+<tr><th>按补贴后总成本估算的回本时间</th><td>${d.full?it(d.full)+" 个月":"无法估算"}</td></tr>
+<tr><th>按相对普通产品额外成本估算的回本时间</th><td>${d.incPay?it(d.incPay)+" 个月":"无额外成本或无法估算"}</td></tr>
+</table>`}
+function commonQuestions(prefix){return `
+<h3 class="required">${prefix}-1. 在看到上述信息后，您家庭更可能采取哪种方式？</h3>
+<div class="options">
+<label class="option"><input type="radio" name="${prefix}_path" value="saving_only" required> 主要通过减少用电、节约电费来应对</label>
+<label class="option"><input type="radio" name="${prefix}_path" value="upgrade_only"> 主要通过购买或更换节能/低碳产品来应对</label>
+<label class="option"><input type="radio" name="${prefix}_path" value="both_saving"> 两种方式都会考虑，但更偏向节约用电</label>
+<label class="option"><input type="radio" name="${prefix}_path" value="both_upgrade"> 两种方式都会考虑，但更偏向产品升级</label>
+<label class="option"><input type="radio" name="${prefix}_path" value="no_action"> 暂时不会主动采取行动</label>
+</div>
+<h3 class="required">${prefix}-2. 在该情境下，您家庭购买或更换节能/低碳产品的意愿有多强？</h3>
+<div class="scale"><label><input type="radio" name="${prefix}_buy" value="1" required>1<br>非常弱</label><label><input type="radio" name="${prefix}_buy" value="2">2<br>比较弱</label><label><input type="radio" name="${prefix}_buy" value="3">3<br>一般</label><label><input type="radio" name="${prefix}_buy" value="4">4<br>比较强</label><label><input type="radio" name="${prefix}_buy" value="5">5<br>非常强</label></div>
+<h3 class="required">${prefix}-3. 在该情境下，您家庭减少用电的意愿有多强？</h3>
+<div class="scale"><label><input type="radio" name="${prefix}_save" value="1" required>1<br>非常弱</label><label><input type="radio" name="${prefix}_save" value="2">2<br>比较弱</label><label><input type="radio" name="${prefix}_save" value="3">3<br>一般</label><label><input type="radio" name="${prefix}_save" value="4">4<br>比较强</label><label><input type="radio" name="${prefix}_save" value="5">5<br>非常强</label></div>`}
+function scenarioHTML(sectionPrefix,d){
+ const durationLabel=d.days===7?"连续7天":"连续30天";
+ const ids=[`${sectionPrefix}1`,`${sectionPrefix}2`,`${sectionPrefix}3`,`${sectionPrefix}4`];
+ return `
+ <div class="scenario"><h3>${durationLabel}｜情境1：无激励、无惩罚</h3><div class="notice gray">政府不提供节能/低碳产品购置补贴，也不对高用电家庭实行额外惩罚性加价。家庭按照常规电价缴费。</div>${baselineTable(d)}${commonQuestions(ids[0])}</div>
+ <div class="scenario"><h3>${durationLabel}｜情境2：仅激励政策</h3><div class="notice ok">政府对购买符合条件的高能效/低碳产品提供购置补贴。家庭用电不实行额外惩罚性加价。</div>${productTable(d)}${commonQuestions(ids[1])}</div>
+ <div class="scenario"><h3>${durationLabel}｜情境3：仅惩罚政策</h3><div class="notice danger">政府不提供购买补贴，但对高用电家庭实行递增阶梯电价。用电量越高，超出部分电价越高。</div>${penaltyTable(d)}${commonQuestions(ids[2])}</div>
+ <div class="scenario"><h3>${durationLabel}｜情境4：激励政策 + 惩罚政策</h3><div class="notice warn">政府同时实施购买补贴和递增阶梯电价政策。购买节能/低碳产品可以降低购置成本，高用电则会带来更高电费压力。</div><h3>阶梯电价压力</h3>${penaltyTable(d)}<h3>补贴与节电收益</h3>${productTable(d)}${commonQuestions(ids[3])}</div>`;
+}
+function renderDuration(days,calcBoxId,scenarioId){
+ const d=calcDuration(days), box=$(calcBoxId), sc=$(scenarioId);
+ if(!d){box.className="notice warn";box.innerHTML=`请先填写 B1 月用电量和 B2 月份，系统将自动生成 ${days} 天极热情境估算。`;sc.innerHTML="";return null}
+ box.className="notice ok";
+ box.innerHTML=`<b>${days}天极热情境下的个性化估算：</b><span class="small">（系统估算用电增幅：${Math.round(d.heatIncreaseRate*100)}%。该值仅用于问卷情境模拟，不代表真实账单预测。）</span>
+ <div class="metrics">
+ <div class="metric"><div class="l">平时月用电量</div><div class="v">${it(d.base)}<span class="u">度</span></div></div>
+ <div class="metric"><div class="l">极热情境预计用电量</div><div class="v">${it(d.heat)}<span class="u">度</span></div></div>
+ <div class="metric"><div class="l">阶梯电价预计电费</div><div class="v">${yuan(d.before.bill)}<span class="u">元</span></div></div>
+ <div class="metric"><div class="l">采用${d.p.label}后预计月节省</div><div class="v">${yuan(d.saving)}<span class="u">元</span></div></div>
+ </div>`;
+ sc.innerHTML=scenarioHTML(days===7?"D":"E",d);
+ return d;
+}
+function renderSocialQuestions(){
+ const items=[
+  "如果身边的人节电或购买节能电器，我也会更倾向这样做。",
+  "即使我原本不打算节电或更换电器，看到身边人这样做也可能改变我的想法。",
+  "在购买电器或调整用电方式前，我会认真参考他人的经验、评价或推荐。"
+ ];
+ $("socialQuestions").innerHTML=items.map((t,i)=>`<div class="scenario"><h3>F1-${i+1}. ${t}</h3><div class="scale">${[1,2,3,4,5,6,7].map(v=>`<label><input type="radio" name="f_influence_${i+1}" value="${v}" required>${v}</label>`).join("")}</div></div>`).join("");
+}
+function countMid(v){return {"0":0,"1_2":1.5,"3_5":4,"6_10":8,"10_plus":12}[v] ?? null}
+function countLabel(v){return {"0":"0 人","1_2":"1–2 人","3_5":"3–5 人","6_10":"6–10 人","10_plus":"10 人以上"}[v] ?? "未选择"}
+function normProp(v){if(v==="unknown")return null;let n=parseFloat(v);return Number.isFinite(n)?n:null}
+function normPropForSimulation(v){const p=normProp(v);return p===null?0.5:p}
+function propLabel(v){return {"0":"几乎没有","0.25":"少数人","0.50":"大约一半","0.75":"大多数人","1":"几乎全部","unknown":"不确定"}[v] ?? "未选择"}
+function calcSocial(){
+ const arr=[1,2,3].map(i=>parseFloat(val(`f_influence_${i}`)));
+ if(arr.some(x=>!Number.isFinite(x)))return null;
+ const rawMean=arr.reduce((s,x)=>s+x,0)/arr.length;
+ const susceptibilityIndex=(rawMean-1)/6;
+ const c=countMid($("socialCount").value);
+ if(c===null)return null;
+ const exposureLinearIndex=Math.max(0,Math.min(1,c/12));
+ const exposureLogIndex=Math.max(0,Math.min(1,Math.log1p(c)/Math.log1p(12)));
+ const rawPropValue=$("lowcarbonProp").value;
+ const lowcarbonNormExposure=normProp(rawPropValue);
+ const lowcarbonNormExposureForSimulation=normPropForSimulation(rawPropValue);
+ if(!rawPropValue)return null;
+ return {
+  socialInfluenceSusceptibility:{
+    itemValues:arr,
+    rawMean:rawMean,
+    index01:susceptibilityIndex,
+    index100:Math.round(susceptibilityIndex*100)
+  },
+  socialExposureSize:{
+    response:$("socialCount").value,
+    responseLabel:countLabel($("socialCount").value),
+    midpoint:c,
+    linearIndex01:exposureLinearIndex,
+    logIndex01:exposureLogIndex,
+    linearIndex100:Math.round(exposureLinearIndex*100),
+    logIndex100:Math.round(exposureLogIndex*100)
+  },
+  lowCarbonNormExposure:{
+    response:rawPropValue,
+    responseLabel:propLabel(rawPropValue),
+    proportion01:lowcarbonNormExposure,
+    proportionForSimulation01:lowcarbonNormExposureForSimulation,
+    index100:lowcarbonNormExposure===null?null:Math.round(lowcarbonNormExposure*100),
+    indexForSimulation100:Math.round(lowcarbonNormExposureForSimulation*100)
+  }
+ };
+}
+function renderSocial(){
+ const s=calcSocial(), box=$("socialBox");
+ if(!s){box.className="notice warn";box.innerHTML="完成 F1–F3 后，系统将分别生成三个用于仿真建模的指标：个人社会影响敏感性、社会接触规模、低碳规范暴露程度。";return}
+ const normText=s.lowCarbonNormExposure.proportion01===null?`不确定；仿真缺省值按 ${s.lowCarbonNormExposure.indexForSimulation100}/100 处理`: `${s.lowCarbonNormExposure.index100}/100`;
+ box.className="notice ok";
+ box.innerHTML=`
+ <b>F板块返回的三个建模指标：</b>
+ <div class="metrics">
+  <div class="metric"><div class="l">个人社会影响敏感性</div><div class="v">${s.socialInfluenceSusceptibility.index100}<span class="u">/100</span></div><div class="small">F1均值=${s.socialInfluenceSusceptibility.rawMean.toFixed(2)}</div></div>
+  <div class="metric"><div class="l">社会接触规模</div><div class="v">${s.socialExposureSize.linearIndex100}<span class="u">/100</span></div><div class="small">约 ${s.socialExposureSize.midpoint} 人；线性标准化</div></div>
+  <div class="metric"><div class="l">低碳规范暴露程度</div><div class="v">${s.lowCarbonNormExposure.proportion01===null?"--":s.lowCarbonNormExposure.index100}<span class="u">/100</span></div><div class="small">${normText}</div></div>
+ </div>
+ <span class="small">说明：三个指标会分别写入 JSON，不再合成为一个“低碳观念社会影响指数”。社会接触规模同时保留原始人数区间、中位数、线性标准化值和对数标准化值，便于后续仿真选择。</span>`;
+}
+
+function render(){renderDuration(7,"calcBox7","scenario7");renderDuration(30,"calcBox30","scenario30");renderSocial()}
+function collectScenario(prefix){return {path:val(`${prefix}_path`),buy:val(`${prefix}_buy`),save:val(`${prefix}_save`)} }
+function collect(){
+ const d7=calcDuration(7),d30=calcDuration(30),social=calcSocial();
+ return {
+  submitted_at:new Date().toISOString(),
+  A:{age:num("age"),gender:$("gender").value,education:$("edu").value,city:$("city").value,hhsize:num("hhsize"),income:$("income").value},
+  B:{kwh:num("kwh"),month:num("month"),acCount:num("acCount"),fridgeCount:num("fridgeCount"),heaterCount:num("heaterCount")},
+  C:{path_preference:val("c1"),upgrade_quality:val("c2")},
+  D_7day:{computed:d7,scenarios:{D1_no_incentive_no_penalty:collectScenario("D1"),D2_incentive_only:collectScenario("D2"),D3_penalty_only:collectScenario("D3"),D4_incentive_penalty:collectScenario("D4")}},
+  E_30day:{computed:d30,scenarios:{E1_no_incentive_no_penalty:collectScenario("E1"),E2_incentive_only:collectScenario("E2"),E3_penalty_only:collectScenario("E3"),E4_incentive_penalty:collectScenario("E4")}},
+  F_social:{
+   social_influence_susceptibility_items:[val("f_influence_1"),val("f_influence_2"),val("f_influence_3")],
+   social_exposure_size_response:$("socialCount").value,
+   low_carbon_norm_exposure_response:$("lowcarbonProp").value,
+   computed:social
+  }
+ }
+}
+function download(filename,text){const blob=new Blob([text],{type:"application/json;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)}
+renderSocialQuestions();
+["kwh","month","acCount","fridgeCount","heaterCount","product","socialCount","lowcarbonProp"].forEach(id=>{ $(id).addEventListener("input",render); $(id).addEventListener("change",render); });
+document.getElementById("survey").addEventListener("change",render);
+$("recalc").onclick=render;
+$("download").onclick=()=>download(`lowcarbon_survey_${Date.now()}.json`,JSON.stringify(collect(),null,2));
+$("survey").addEventListener("submit",e=>{e.preventDefault(); if(!e.target.checkValidity()){e.target.reportValidity();return} const json=JSON.stringify(collect(),null,2); $("out").textContent=json; $("out").style.display="block"; $("msg").style.display="block"; $("msg").textContent="研究数据已生成。";});
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+\documentclass[12pt,a4paper]{ctexart}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+
+\setstretch{1.35}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue,
+  citecolor=black
+}
+
+\title{\heiti 多维政策组合如何在极端气候下促进家庭能源结构低碳转型\\
+\large 一项基于 LLM-Agents 的仿真研究}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+在“双碳”目标持续推进和极端气候事件频发的背景下，家庭能源消费已成为能源转型研究中的关键场域。现有研究表明，极端高温、寒潮和持续异常天气会显著改变家庭制冷、采暖和日常用电需求，推动居民部门电力负荷上升并加剧峰值压力；与此同时，家庭能源低碳转型并不只是技术替换问题，而是同时受到收入水平、价格敏感度、设备更新成本、基础设施可达性、政策激励和社会互动影响的复杂行为过程。基于此，本文拟构建一个“问卷识别微观偏好—情景实验识别政策响应—LLM-Agent 模拟动态演化”的综合研究框架，系统评估极端气候背景下多维政策组合对家庭能源低碳转型的影响，并比较其在效率与公平之间的差异。研究将重点关注经济激励、基础设施支持和规制约束等政策工具如何通过异质性家庭的重复决策与社会扩散，影响家庭能源负荷、低碳产品采用和支付意愿变化。本文旨在为居民部门低碳转型政策设计提供具有针对性和可操作性的分析依据。
+\end{abstract}
+
+\noindent\textbf{关键词：}极端气候；政策组合；家庭能源转型；支付意愿；LLM-Agent；社会扩散
+
+\section{研究背景与意义}
+在“双碳”目标和能源转型战略持续推进的背景下，居民部门正在成为低碳治理中不可忽视的重要领域。一方面，极端高温、寒潮和异常天气会显著改变家庭制冷、采暖和日常用电需求，并推高电力系统峰值压力。已有研究表明，气候变化将持续放大居民部门能源需求，尤其是高温情境下的制冷需求增长往往高于冬季采暖需求下降的幅度，进而对电力系统稳定性和供能韧性提出更高要求（van Ruijven et al., 2019；Dirks et al., 2015；An et al., 2026）。另一方面，家庭能源低碳转型并不只是一个单纯的技术替换问题，而是同时受到收入水平、价格敏感度、设备更新成本、基础设施可达性、政策激励以及社会互动影响的复杂行为过程。
+
+从现实政策看，单一政策工具往往难以同时实现节能减排、负荷优化和公平改善。补贴政策能够缓解购置成本压力，但可能更多惠及具备支付能力的家庭；惩罚性价格和规制约束能够压缩高耗电行为，却可能对低收入家庭形成更高负担；基础设施支持能够降低转型门槛，但其效果又受到区域发展水平和公共投入覆盖范围的限制。因此，在极端气候背景下，如何通过经济激励、规制约束、基础设施支持和信息引导构成多维政策组合，推动不同类型家庭实现更有效、更公平的低碳转型，已经成为一个具有现实紧迫性和理论价值的重要问题。
+
+本研究的意义主要体现在三个方面。第一，在理论上，本研究有助于推动家庭能源研究从静态偏好分析走向动态机制分析，将极端气候、政策组合、异质家庭和社会扩散纳入统一框架。第二，在方法上，本研究尝试将问卷情景实验与 LLM-Agent 仿真结合起来，把微观行为识别与群体层面的动态演化分析连接起来。第三，在实践上，本研究可为居民部门低碳转型政策设计提供更有针对性的依据，尤其是在“效率提升”与“公平保障”之间寻找更可行的平衡路径。
+
+\section{国内外研究现状与评述}
+\subsection{国外研究现状}
+现有国外研究大体可归纳为四个方向。
+
+第一，关于极端气候与家庭能源需求的研究较为充分。相关文献普遍指出，极端高温和持续热浪会显著推高居民制冷需求和电力峰值负荷，并对建筑能耗和区域用电系统带来持续压力（Zhou et al., 2014；Dirks et al., 2015；van Ruijven et al., 2019；An et al., 2026）。这一研究脉络说明，气候风险不仅是环境问题，也直接塑造家庭能源消费结构和电力系统运行约束。
+
+第二，关于建筑能效和技术适应的研究强调，通过外墙保温、节能门窗、高效制冷制热系统、智能温控和建筑改造等方式，可以显著缓解气候引致的能耗波动（Cao et al., 2017）。这类研究从技术层面说明了基础设施和设备条件在家庭能源转型中的关键作用。
+
+第三，关于家庭绿色消费和低碳产品采用的研究，已从一般性的环保态度扩展到技术采纳、支付意愿和行为驱动机制。已有研究表明，家庭是否愿意购买高能效设备、电动车或其他低碳产品，不仅取决于价格和补贴，还受可接受回本期、风险认知、生活质量偏好与社会影响等因素制约（Xu et al., 2021；Jakučionytė-Skodienė \& Liobikienė, 2023）。
+
+第四，关于收入差异、区域差异与能源公平的研究逐渐增多。相关文献指出，高收入群体更容易承担低碳设备更新成本，而低收入家庭则更可能陷入“想转型但转不了”的困境；收入不平等还可能对可再生能源消费和绿色产品采用形成长期抑制（Maglicic \& Vasconcelos, 2025；Eyuboglu \& Uzar, 2025；Liu et al., 2025）。
+
+在政策组合研究方面，国外学界已经从单一政策评估逐步转向 policy mix 视角。Rogge and Reichardt（2016）提出，政策组合不仅包括多个政策工具的叠加，还涉及政策目标、政策一致性和实施过程。Kern, Rogge and Howlett（2019）进一步指出，可持续转型研究需要将政策组合与制度演化、创新扩散和实施机制结合起来。Rosenow, Kern and Rogge（2017）认为，能源效率和能源转型更依赖综合性、针对性更强的工具组合，而非单一补贴或单一约束工具。最新的仿真研究也表明，碳税、补贴等组合式政策通常优于单一工具（Nieddu et al., 2024）。不过，这些研究更多聚焦宏观系统、产业技术或总体能源结构，对家庭层面、极端气候情境和社会互动扩散过程的关注仍然不足。
+
+\subsection{国内研究现状}
+国内研究近年来在“双碳”政策、能源政策演化与居民能源转型方面积累较快。一方面，已有研究从国家层面梳理了中国能源政策体系和“双碳”政策框架，指出中国能源政策已形成多目标、多工具并行的复杂结构，但不同政策工具之间仍存在结构失衡和协同性不足的问题（《“双碳”政策的知识图谱、研究热点与理论框架》，2023；《中国能源政策解构及其组合演进研究》，2025）。
+
+另一方面，围绕中国家庭能源消费、能源效率与收入差异的研究表明，我国家庭在区域、城乡和收入层面均存在显著异质性，这意味着统一的政策工具难以对所有家庭产生同样效果（Zheng et al., 2024；Liu et al., 2025）。相关研究也提示，家庭能源公平问题不仅体现在消费水平差异上，也体现在转型机会、基础设施条件和政策收益分配方面。
+
+\subsection{研究评述}
+总体来看，现有研究仍存在三方面不足。其一，关于家庭能源低碳转型的研究多停留在静态层面，难以解释家庭在持续气候冲击和重复决策中的行为演化。其二，政策研究虽已开始转向“组合”视角，但针对家庭层面多维政策组合如何通过微观行为机制发挥作用，研究仍不充分。其三，公平问题虽受到越来越多重视，但尚缺少一个能够同时整合效率、行为响应和分配结果的综合分析框架。
+
+基于这些不足，本研究将围绕“极端气候—政策组合—家庭异质性—社会互动—转型结果”这一逻辑链条展开系统研究，力图在研究对象、研究内容和研究方法上实现进一步推进。
+
+\section{研究目标、研究问题与研究思路}
+\subsection{研究目标}
+本研究的总体目标，是构建一个基于问卷校准和 LLM-Agent 仿真的综合分析框架，用以评估极端气候背景下多维政策组合对家庭能源低碳转型的影响，并比较其在效率和公平之间的差异。
+
+\subsection{研究问题}
+围绕这一目标，本文拟重点回答以下问题：
+\begin{enumerate}[label=\arabic*.]
+  \item 极端气候冲击如何改变家庭能源需求、用电行为和低碳产品支付意愿；
+  \item 经济激励、基础设施支持和规制约束等不同政策工具分别如何影响家庭的低碳转型决策；
+  \item 多维政策组合是否优于单一政策工具，哪些组合更有利于同时实现负荷优化、低碳采用和公平改善；
+  \item 不同收入水平、地区条件、价格敏感度和设备保有量的家庭，其政策响应是否存在系统差异；
+  \item 社会互动和邻里影响是否会放大低碳行为扩散，从而改变政策组合的整体效果。
+\end{enumerate}
+
+\subsection{研究思路}
+本研究的核心逻辑可以概括为：极端气候通过改变家庭能源需求和舒适性约束形成外生冲击，政策组合通过改变成本、收益和可达性塑造家庭行为选择，异质性家庭对同一冲击和同一政策产生差异化反应，社会互动进一步影响个体选择和扩散速度，最终形成不同的系统性转型结果。
+
+具体而言，家庭决策可被理解为“家庭行为 = $f$(极端气候，政策组合，家庭特征，社会互动)”。其中，极端气候主要体现在高温、寒潮和持续天气异常对负荷需求的冲击；政策组合主要包括经济激励、基础设施支持和规制约束三类工具；家庭特征包括收入、住房、设备、基线用电和低碳偏好；社会互动则通过邻里比较、熟人交流和社会规范影响行为更新。在此基础上，研究将从社会规划者视角考察不同政策组合是否能够在降低高峰负荷、促进低碳产品采用和改善分配公平之间形成更优平衡。
+
+\section{理论框架与研究假设}
+\subsection{理论框架}
+本研究将“气候风险—政策组合—家庭异质性—社会扩散—转型结果”作为总体分析框架。
+
+首先，极端气候通过改变制冷、采暖和舒适性需求，增加家庭用电负荷和成本压力，并强化对可靠供能和节能设备的需求。其次，政策组合通过影响价格、购置成本、基础设施可达性和信息环境，改变家庭对节电与设备替换的相对收益判断。再次，不同家庭由于收入水平、住房条件、设备存量、环保意识和社会影响易感性不同，会产生差异化反应。进一步地，家庭并不是孤立决策者，邻里比较、亲友交流、社会规范和观察学习会改变其行为阈值和采用概率。最终，微观层面的差异化行为在系统层面表现为不同的总用电量、峰值负荷、低碳产品采用率、支付意愿变化与公平结果。
+
+需要特别说明的是，本文区分两类支付意愿。一类是“低碳产品额外支付意愿”，即家庭愿意为高能效、低碳产品相对于普通产品所承担的额外成本；另一类是“保供或可靠性支付意愿”，即在极端气候导致供电紧张时，家庭为避免限电、维持舒适性而愿意额外支付的金额。前者是本文的核心行为变量，后者作为极端天气适应性分析中的辅助变量。这一区分有助于避免不同 WTP 构念混用，并确保问卷、理论和模型输出保持一致。
+
+\subsection{研究假设}
+结合现有文献与研究逻辑，本文提出如下研究假设：
+
+\textbf{H1：}极端气候持续时间越长，家庭的节电强度、低碳产品采用意愿和低碳产品额外支付意愿越高。  
+\textbf{H2：}经济激励型政策能够显著提高家庭对低碳产品的接受度和采用概率，且对价格敏感型和中低收入家庭更有效。  
+\textbf{H3：}规制约束型政策能够更显著地抑制高耗电行为和降低峰值负荷，但其分配效应可能不均衡，对低收入家庭形成更大负担。  
+\textbf{H4：}基础设施支持型政策能够显著降低家庭低碳转型的物理约束，从而放大补贴等激励政策的效果。  
+\textbf{H5：}社会互动会放大政策组合对家庭低碳产品采用和节电行为的影响，并加速行为扩散。  
+\textbf{H6：}相较单一政策工具，多维政策组合更有可能同时实现负荷优化、低碳采用提升和公平改善。
+
+\section{研究内容与研究设计}
+\subsection{研究内容}
+本研究主要包括四项内容。
+
+第一，识别家庭能源低碳转型的微观基础。通过问卷调查系统收集家庭基本信息、收入水平、用电基线、设备保有量、低碳偏好、社会影响易感性以及支付意愿等信息，并通过情景实验观察家庭在不同气候和政策条件下的行为反应，为模型校准提供实证基础。
+
+第二，构建多维政策组合框架。以既有研究讨论和前期文档为基础，重点围绕经济激励型政策、基础设施支持型政策和规制约束型政策展开。经济激励主要体现为补贴、价格优惠和回本改善机制；基础设施支持主要体现为充电设施、建筑节能改造、清洁能源接入与储能支持等；规制约束主要体现为惩罚性电价、阶梯价格和碳税式约束。
+
+第三，分析极端气候与社会互动下的家庭行为演化机制。问卷中的情景设计将以连续 7 天和连续 30 天极热天气为代表性冲击场景，并通过个性化账单、节电收益、补贴收益和回本时间等信息处理，考察家庭的节电意愿、低碳产品采用意愿和支付意愿变化。在仿真阶段，家庭作为具有异质性的 Agent，在公共信息层接收气候和政策信号，在社会互动层受到邻里和熟人网络影响，通过反复决策形成行为扩散、收敛或分化。
+
+第四，比较政策组合的效率与公平结果。研究将从总用电量、高峰负荷、节电强度、低碳产品采用率、支付意愿变化和社会公平指数等多个维度，评估不同政策组合的效果，并进一步讨论哪些政策组合更适合在极端气候背景下促进不同类型家庭实现低碳转型。
+
+\subsection{政策组合设计}
+为保持研究逻辑清晰和实验可操作性，本文将优先围绕三类政策维度展开：经济激励、基础设施支持和规制约束。
+
+在基础实验中，将重点围绕“经济激励 × 基础设施支持”构造九组基本政策情景，以比较不同强度组合下的家庭响应差异。在扩展实验中，再进一步叠加规制约束，用于比较“温和激励组合”与“激励 + 约束组合”的差异。这样的设计既能保持与前期研究讨论的一致性，也有利于后续从单一政策比较逐步过渡到完整的多维政策组合分析。
+
+\section{研究方法与技术路线}
+本研究拟采用“问卷调查 + 情景实验 + LLM-Agent 仿真”的综合研究方法。
+
+第一，问卷调查用于识别家庭层面的异质性特征和基线偏好。与一般描述性问卷不同，本研究中的问卷不仅收集家庭基本信息和用电情况，还设计了与气候风险和政策组合相结合的选择情境，从而获得更接近真实决策环境的行为数据。
+
+第二，情景实验用于测量个体对极端天气和政策组合的反应。通过设置连续 7 天极热和连续 30 天极热等情景，并叠加补贴、惩罚、无干预和组合政策等处理，识别家庭在不同信息条件下的支付意愿、节电意愿和低碳产品选择倾向。这里的情景实验既服务于问卷研究，也直接为后续 Agent 参数化提供依据。
+
+第三，LLM-Agent 仿真用于刻画动态系统中的行为扩散与转型路径。问卷能够回答“人们在某一情境下怎么想、愿意到什么程度”，但难以回答“很多这样的人在持续冲击和社会互动中反复决策后，系统会如何演化”。因此，ABM 的角色在于把问卷中识别出的微观参数转化为动态决策规则，并在不同气候、政策和社会网络条件下进行机制实验。研究中将特别关注“公共信息层”和“社会互动层”的联合作用：前者由天气、价格和政策情境构成，后者由邻里交流、观察学习和社会规范构成。LLM 的引入，主要是为了更真实地模拟家庭在复杂信息环境中的判断、说服和更新过程，而不是替代所有确定性机制。
+
+第四，研究将通过分样本校准、敏感性分析和结果对照来提高模型稳健性。拟收集约 1000 份有效样本，并采用分样本方式进行参数识别与结果检验；同时，对关键参数如补贴敏感度、惩罚敏感度、社会影响权重和极端天气强度等进行敏感性分析，以确保研究结论不依赖于个别设定。需要说明的是，本研究中的仿真并不旨在精确预测未来某一真实市场渗透率，而是用于比较不同政策组合在合理行为假设下的相对效果和演化路径。
+
+\section{创新点与研究可行性}
+\subsection{创新点}
+本研究的创新主要体现在四个方面。
+
+第一，将家庭能源低碳转型问题置于极端气候冲击背景下系统讨论，把气候风险、居民用电、低碳采用与电力系统压力统一起来，而不是割裂地研究居民节能或绿色消费。
+
+第二，从单一工具分析转向多维政策组合分析，突出经济激励、基础设施支持和规制约束的协同作用，并把公平性纳入结果评价框架。
+
+第三，在方法上将问卷情景实验与 LLM-Agent 仿真结合起来，使微观偏好识别与群体层面动态演化分析相衔接，弥补传统静态调查研究在机制解释上的不足。
+
+第四，将社会互动机制正式纳入家庭能源转型研究，通过邻里影响、熟人讨论和社会规范扩散来解释政策效果为何会在不同群体和不同情境中出现差异。
+
+\subsection{研究可行性}
+本研究已经具备较好的前期基础。第一，研究问题和政策框架已较为清晰，前期讨论已经形成了围绕“极端气候 + 多维政策组合 + 家庭异质性 + 社会互动”的完整逻辑链条。第二，问卷原型已经初步完成，包含基线信息、支付意愿、极端天气情景和社会影响模块，可在此基础上进一步优化并用于正式调查。第三，仿真框架已有初步基础，可以在现有思路上继续推进问卷校准和政策情景分析。第四，相关文献基础较为扎实，既有家庭能源与气候冲击研究，也有政策组合和行为扩散研究，可为理论与方法提供充分支持。因此，从选题价值、数据获取、方法路径和前期准备来看，本研究具有较强可行性。
+
+\section{研究进度安排与预期成果}
+\subsection{研究进度安排}
+第一阶段为文献梳理与开题准备阶段，重点完成国内外文献综述、研究框架细化和研究假设完善。
+
+第二阶段为问卷修订与预调查阶段，重点优化问卷结构、情景设计和变量设置，并进行小规模预调查。
+
+第三阶段为正式调查与数据整理阶段，完成样本收集、数据清洗和描述性分析，识别家庭异质性与政策响应特征。
+
+第四阶段为模型校准与仿真分析阶段，基于问卷结果开展不同气候情景和政策组合情景下的动态仿真比较。
+
+第五阶段为结果分析与论文写作阶段，完成实证分析、稳健性检验、政策讨论和论文定稿。
+
+\subsection{预期成果}
+本研究预期形成以下成果：第一，构建一个能够连接极端气候、政策组合、家庭异质性和社会互动的分析框架；第二，识别不同政策组合在促进家庭能源低碳转型方面的相对效果及其公平性差异；第三，提出面向不同类型家庭的政策建议，为居民部门低碳转型政策设计提供依据；第四，形成一篇较为完整的研究论文，并为后续拓展研究奠定基础。
+
+\section{参考文献}
+\begin{enumerate}[label={[\arabic*]}]
+  \item An, J., Liu, W., Wang, C., Zhou, X., Hu, S., \& Yan, D. (2026). Long-term impact of climate change on residential cooling loads in Beijing: A multi-factor analysis of occupant behaviors and envelopes. \textit{Energy and Buildings, 351}, 116691.
+  \item Cao, J., Li, M., Wang, M., Xiong, M., \& Meng, F. (2017). Effects of climate change on outdoor meteorological parameters for building energy-saving design in the different climate zones of China. \textit{Energy and Buildings, 146}, 65--72.
+  \item Dirks, J. A., Gorrissen, W. J., Hathaway, J. H., Skorski, D. C., Scott, M. J., Pulsipher, T. C., Huang, M., Liu, Y., \& Rice, J. S. (2015). Impacts of climate change on energy consumption and peak demand in buildings: A detailed regional approach. \textit{Energy, 79}, 20--32.
+  \item Eyuboglu, K., \& Uzar, U. (2025). The social, economic, and environmental drivers of renewable energy: Is income inequality a threat to renewable energy transition? \textit{Journal of Cleaner Production, 490}, 144780.
+  \item Jakučionytė-Skodienė, M., \& Liobikienė, G. (2023). Changes in energy consumption and CO2 emissions in the Lithuanian household sector caused by environmental awareness and climate change policy. \textit{Energy Policy, 180}, 113687.
+  \item Kern, F., Rogge, K. S., \& Howlett, M. (2019). Policy mixes for sustainability transitions: New approaches and insights through bridging innovation and policy studies. \textit{Research Policy, 48}(10), 103832.
+  \item Liu, M., Wang, J., Zhang, L., \& Zhang, X. (2025). Does urbanization promote the rural residential energy transition? Evidence from China based on the two-stage dynamic Spatial Durbin model. \textit{Habitat International, 163}, 103473.
+  \item Maglicic, M., \& Vasconcelos, V. V. (2025). Income inequality in the uptake of environmentally friendly products. \textit{iScience, 28}(4), 112277.
+  \item Nieddu, M., Raberto, M., Ponta, L., Teglio, A., \& Cincotti, S. (2024). Evaluating policy mix strategies for the energy transition using an agent-based macroeconomic model. \textit{Energy Policy, 194}, 114424.
+  \item Rogge, K. S., \& Reichardt, K. (2016). Policy mixes for sustainability transitions: An extended concept and framework for analysis. \textit{Research Policy, 45}(8), 1620--1635.
+  \item Rosenow, J., Kern, F., \& Rogge, K. S. (2017). The need for comprehensive and well targeted instrument mixes to stimulate energy transitions: The case of energy efficiency policy. \textit{Energy Research \& Social Science, 33}, 95--104.
+  \item van Ruijven, B. J., De Cian, E., \& Sue Wing, I. (2019). Amplification of future energy demand growth due to climate change. \textit{Nature Communications, 10}(1), 2762.
+  \item Xu, M., Zhang, S., Li, P., Weng, Z., Xie, Y., \& Lan, Y. (2024). Energy-related carbon emission reduction pathways in Northwest China towards carbon neutrality goal. \textit{Applied Energy, 358}, 122547.
+  \item Xu, Q., Hwang, B.-G., \& Lu, Y. (2021). Exploring the influencing paths of behavior-driven household energy-saving intervention. \textit{Sustainable Cities and Society, 71}, 102951.
+  \item Zheng, J., Dang, Y., \& Assad, U. (2024). Household energy consumption, energy efficiency, and household income: Evidence from China. \textit{Applied Energy, 353}, 122074.
+  \item Zhou, Y., Clarke, L., Eom, J., Kyle, P., Patel, P., Kim, S. H., Dirks, J., Jensen, E., Liu, Y., Rice, J., Schmidt, L., \& Seiple, T. (2014). Modeling the effect of climate change on U.S. state-level buildings energy demands in an integrated assessment framework. \textit{Applied Energy, 113}, 1077--1088.
+  \item 《“双碳”政策的知识图谱、研究热点与理论框架》. (2023). \textit{北京理工大学学报（社会科学版）}.
+  \item 《中国能源政策解构及其组合演进研究》. (2025). \textit{北京理工大学学报（社会科学版）}.
+  \item 《中国城乡家庭能源平等变化特征分析》. (2022). \textit{地理学报}.
+\end{enumerate}
+
+\end{document}
