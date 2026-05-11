@@ -22,7 +22,7 @@ table{width:100%;border-collapse:collapse;margin:12px 0;background:#fff}th,td{bo
 <header>
 <h1>极端天气下居民低碳用电与低碳产品采用意愿调查</h1>
 <p>电子问卷原型（v13）：根据家庭月用电量、电器数量和账单月份，自动估算不同极热持续时间下的电费、补贴收益、节电收益与回本时间，并进一步识别家庭在政策与社会影响下的行为参数。</p>
-<p class="small" style="color:rgba(255,255,255,.88)">正式调查前，请将电价、补贴、产品价格和节电比例替换为目标地区的最新政策参数。</p>
+<p class="small" style="color:rgba(255,255,255,.88)">电价参数采用珠三角（广州为代表）居民阶梯电价：夏季5-10月第一档上限260度，非夏季1-4/11-12月200度。</p>
 </header>
 
 <form id="survey">
@@ -243,21 +243,33 @@ table{width:100%;border-collapse:collapse;margin:12px 0;background:#fff}th,td{bo
 
 <script>
 const CONFIG={
- tariff:{basePrice:.588,tier2Adder:.05,tier3Adder:.30,winterSummerMonths:[1,2,6,7,8,12],winterSummer:{tier1:200,tier2:450},springAutumn:{tier1:200,tier2:350}},
+ // 珠三角（广东）居民阶梯电价参数
+ // 广州第一档: 0.5889元/度；深圳含基金附加约0.6629元/度
+ // 各城市差异0.001-0.01元/度，问卷统一使用广州标准作为代表
+ tariff:{
+  basePrice:.5889,   // 第一档基础电价（元/度）
+  tier2Adder:.05,    // 第二档加价
+  tier3Adder:.30,    // 第三档加价
+  summerMonths:[5,6,7,8,9,10],  // 夏季模式月份
+  summer:{tier1:260,tier2:600},  // 夏季第一档上限260度，第二档600度
+  nonSummer:{tier1:200,tier2:400} // 非夏季第一档上限200度，第二档400度
+ },
  subsidy:{applianceRate:.15,applianceMax:1500,pvRate:.10,pvMax:3000},
+ // 产品参数（2025年珠三角市场参考价）
  products:{
-  ac:{label:"1级能效空调",normalPrice:3000,highPrice:4000,savingRate:.20,subsidyType:"appliance"},
-  fridge:{label:"1级能效冰箱",normalPrice:2600,highPrice:3400,savingRate:.08,subsidyType:"appliance"},
-  heater:{label:"热泵热水器",normalPrice:2200,highPrice:5200,savingRate:.15,subsidyType:"appliance"},
-  pv:{label:"分布式光伏系统",normalPrice:0,highPrice:25000,savingRate:.35,subsidyType:"pv"}
+  ac:{label:"1级能效空调",normalPrice:2500,highPrice:3500,savingRate:.25,subsidyType:"appliance"},
+  fridge:{label:"1级能效冰箱",normalPrice:2000,highPrice:3200,savingRate:.10,subsidyType:"appliance"},
+  heater:{label:"热泵热水器",normalPrice:3000,highPrice:5500,savingRate:.20,subsidyType:"appliance"},
+  pv:{label:"分布式光伏系统",normalPrice:0,highPrice:20000,savingRate:.40,subsidyType:"pv"}
  }
 };
 const $=id=>document.getElementById(id), yuan=n=>Number.isFinite(n)?n.toFixed(2):"--", it=n=>Number.isFinite(n)?String(Math.round(n)):"--";
 function num(id){let v=parseFloat($(id)?.value);return Number.isFinite(v)?v:null}
 function val(name){let e=document.querySelector(`[name="${name}"]:checked`);return e?e.value:null}
 function vals(name){return [...document.querySelectorAll(`[name="${name}"]:checked`)].map(e=>e.value)}
-function season(m){return CONFIG.tariff.winterSummerMonths.includes(Number(m))?"冬夏季":"春秋季"}
-function thresholds(m){return CONFIG.tariff.winterSummerMonths.includes(Number(m))?CONFIG.tariff.winterSummer:CONFIG.tariff.springAutumn}
+function isSummer(m){return CONFIG.tariff.summerMonths.includes(Number(m))}
+function season(m){return isSummer(m)?"夏季":"非夏季"}
+function thresholds(m){return isSummer(m)?CONFIG.tariff.summer:CONFIG.tariff.nonSummer}
 function bill(kwh,m){
  if(!Number.isFinite(kwh)||!m)return null;
  const t=thresholds(m),p1=CONFIG.tariff.basePrice,p2=p1+CONFIG.tariff.tier2Adder,p3=p1+CONFIG.tariff.tier3Adder;
@@ -266,13 +278,29 @@ function bill(kwh,m){
  return {kwh,season:season(m),tier1:t.tier1,tier2:t.tier2,p1,p2,p3,k1,k2,k3,bill:b,baseOnly:base,penalty:b-base,tier:kwh<=t.tier1?"第一档":(kwh<=t.tier2?"第二档":"第三档")};
 }
 function subsidy(p){return p.subsidyType==="pv"?Math.min(p.highPrice*CONFIG.subsidy.pvRate,CONFIG.subsidy.pvMax):Math.min(p.highPrice*CONFIG.subsidy.applianceRate,CONFIG.subsidy.applianceMax)}
-function seasonCoef(m){m=Number(m); if([6,7,8].includes(m))return 1; if([5,9].includes(m))return .7; if([4,10].includes(m))return .4; return .2}
+// 珠三角季节系数（相对于非空调季基准月用电量的倍数）
+// 参考调研数据：5-10月为空调季，7-8月酷暑假长
+function seasonMultiplier(m){
+ m=Number(m);
+ const map={1:.3,2:.3,3:.5,4:.7,5:1.2,6:1.5,7:1.8,8:1.8,9:1.3,10:.9,11:.4,12:.3};
+ return map[m]??1.0;
+}
+
+// 极热天气（连续≥35°C）用电增幅估算
+// 基于调研：35°C以上每升高1°C全市负荷增约100万kWh；家庭层面单台1.5匹每天多耗1.3-1.5度
 function estimatedHeatIncrease(days){
- const m=num("month"), ac=num("acCount")??0, fridge=num("fridgeCount")??0, heater=num("heaterCount")??0;
+ const m=num("month"), ac=num("acCount")??0;
  if(!m)return null;
- const fullMonthRate=0.02+seasonCoef(m)*(0.06+0.06*Math.min(ac,5)+0.01*Math.min(fridge,3)+0.015*Math.min(heater,3));
- const rate=fullMonthRate*(days/30);
- return Math.max(0,Math.min(rate,.80));
+ // 基础增幅：空调季基准 + 极热天气额外增幅
+ const baseMulti = seasonMultiplier(m);
+ // 非空调季（1-4月/11-12月）极热效应很弱
+ if(baseMulti < 1.0) return 0;
+ // 空调季极热增幅：每台空调额外15-20%，随天数累积
+ const perAcRate = days <= 7 ? 0.15 : 0.20;
+ const acEffect = Math.min(perAcRate * Math.min(ac, 5) * (days/30), 0.65);
+ // 季节本身已含基础空调用电，叠加极热额外增量
+ const rate = (baseMulti - 1.0) * 0.6 + acEffect;
+ return Math.max(0, Math.min(rate, 0.70));
 }
 function calcDuration(days){
  let base=num("kwh"),m=num("month"),r=estimatedHeatIncrease(days); if(!base||!m||r===null)return null;
