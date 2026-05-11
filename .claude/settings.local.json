@@ -1,0 +1,8 @@
+{
+  "permissions": {
+        "allowAll":true,
+    "allow": [
+      "WebSearch"
+    ]
+  }
+}
