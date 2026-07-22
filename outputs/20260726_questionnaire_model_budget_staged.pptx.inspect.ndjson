@@ -1,0 +1,146 @@
+{"kind":"deck","id":"pr/dhmcvp","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"DEFAULT"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout2.xml","name":"clean"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout3.xml","name":"空白","type":"blank","placeholders":[{"name":"dateTime","type":"dateTime"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster2.xml","name":"","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout4.xml","name":"DEFAULT"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout5.xml","name":"clean"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout6.xml","name":"空白","type":"blank","placeholders":[{"name":"dateTime","type":"dateTime"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"研究一","textShapes":1}
+{"kind":"textbox","id":"sh/547294r6","slide":1,"name":"文本框 1","text":"研究一\n偏向于研究方法创新","textPreview":"研究一 | 偏向于研究方法创新","textChars":13,"textLines":2,"bbox":[491.27,237.93,426.67,113]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":""}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"LLM-Agents × 家庭能源消费","textShapes":16}
+{"kind":"textbox","id":"sh/9072xkry","slide":2,"name":"Text 0","text":"LLM-Agents × 家庭能源消费","textPreview":"LLM-Agents × 家庭能源消费","textChars":19,"textLines":1,"bbox":[52.8,36.48,384,28.8]}
+{"kind":"textbox","id":"sh/ozy1ofad","slide":2,"name":"Text 1","text":"研究目的：极端气候下的低收入居民绿色转型","textPreview":"研究目的：极端气候下的低收入居民绿色转型","textChars":20,"textLines":1,"bbox":[52.8,69.12,1123.2,52.8]}
+{"kind":"shape","id":"sh/b29kza94","slide":2,"name":"Shape 2","bbox":[52.8,132.48,1171.2,0]}
+{"kind":"textbox","id":"sh/a10jqpsj","slide":2,"name":"Text 3","text":"核心问题","textPreview":"核心问题","textChars":4,"textLines":1,"bbox":[65.28,168,192,33.6]}
+{"kind":"textbox","id":"sh/x4r21kru","slide":2,"name":"Text 4","text":"在极端气候冲击下，政策组合（政府补贴与阶梯电价）如何促进家庭的绿色消费意愿？","textPreview":"在极端气候冲击下，政策组合（政府补贴与阶梯电价）如何促进家庭的绿色消费意愿？","textChars":38,"textLines":1,"bbox":[65.28,203.52,542.4,110.4]}
+{"kind":"textbox","id":"sh/w3i1sfa9","slide":2,"name":"Text 5","text":"目的一：刻画人群异质性\n将低收入居民区分为生存约束型、气候脆弱型、补贴敏感型与自主绿色型，识别不同约束机制。","textPreview":"目的一：刻画人群异质性 | 将低收入居民区分为生存约束型、气候脆弱型、补贴敏感型与自主绿色型，识别不同约束机制。","textChars":54,"textLines":2,"bbox":[67.2,347.52,362.88,132.48]}
+{"kind":"textbox","id":"sh/r65knqtk","slide":2,"name":"Text 6","text":"目的二：评估政策组合\n比较设备购置补贴与递增阶梯电价在不同强度下，对低碳支付意愿和用电行为的影响。","textPreview":"目的二：评估政策组合 | 比较设备购置补贴与递增阶梯电价在不同强度下，对低碳支付意愿和用电行为的影响。","textChars":49,"textLines":2,"bbox":[458.88,347.52,362.88,132.48]}
+{"kind":"textbox","id":"sh/q5wjelsz","slide":2,"name":"Text 7","text":"目的三：搭建仿真平台\n以问卷参数初始化LLM-Agent，模拟极端天气—政策响应—绿色行为转化的动态过程。","textPreview":"目的三：搭建仿真平台 | 以问卷参数初始化LLM-Agent，模拟极端天气—政策响应—绿色行为转化的动态过程。","textChars":53,"textLines":2,"bbox":[850.56,347.52,362.88,132.48]}
+{"kind":"textbox","id":"sh/ove9o7yd","slide":2,"name":"Text 8","text":"研究逻辑","textPreview":"研究逻辑","textChars":4,"textLines":1,"bbox":[672,168,192,33.6]}
+{"kind":"textbox","id":"sh/9wnqhczy","slide":2,"name":"Text 9","text":"极端天气","textPreview":"极端天气","textChars":4,"textLines":1,"bbox":[676.8,220.8,103.68,59.52]}
+{"kind":"textbox","id":"sh/mtwrmxg7","slide":2,"name":"Text 10","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[787.2,232.32,24,26.88]}
+{"kind":"textbox","id":"sh/nu58f2hs","slide":2,"name":"Text 11","text":"家庭用电季节性波动","textPreview":"家庭用电季节性波动","textChars":9,"textLines":1,"bbox":[816,220.8,103.68,59.52]}
+{"kind":"textbox","id":"sh/wjy9sry9","slide":2,"name":"Text 12","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[926.4,232.32,24,26.88]}
+{"kind":"textbox","id":"sh/xk7qlczu","slide":2,"name":"Text 13","text":"峰值负荷的增加\n能源负担上升","textPreview":"峰值负荷的增加 | 能源负担上升","textChars":14,"textLines":2,"bbox":[955.2,220.8,131.07,59.53]}
+{"kind":"textbox","id":"sh/ahwrqhgj","slide":2,"name":"Text 14","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[1093.53,232.32,24,26.88]}
+{"kind":"textbox","id":"sh/bip8jmho","slide":2,"name":"Text 15","text":"绿色转型分化","textPreview":"绿色转型分化","textChars":6,"textLines":1,"bbox":[1121.53,220.8,76.53,59.53]}
+{"kind":"textbox","id":"sh/cnupgny5","slide":2,"name":"Text 16","text":"研究意义：验证LLM -Agent based model 可以作为政策组合有效的检验工具与手段，属于方法创新","textPreview":"研究意义：验证LLM -Agent based model 可以作为政策组合有效的检验工具与手段，属于方法创新","textChars":55,"textLines":1,"bbox":[213.53,555.2,821.33,44.13]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":"本页用于说明研究不是单纯考察补贴效果，而是关注极端气候背景下低收入居民绿色转型的异质性、政策组合效果与公平后果。"}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"研究流程","textShapes":13}
+{"kind":"textbox","id":"sh/cza94vmx","slide":3,"name":"Text 0","text":"研究流程","textPreview":"研究流程","textChars":4,"textLines":1,"bbox":[52.8,36.48,384,28.8]}
+{"kind":"textbox","id":"sh/d0jax03i","slide":3,"name":"Text 1","text":"总体研究设计：问卷分类 → Agent建模 → 政策仿真→方法检验","textPreview":"总体研究设计：问卷分类 → Agent建模 → 政策仿真→方法检验","textChars":33,"textLines":1,"bbox":[52.8,69.12,1123.2,52.8]}
+{"kind":"shape","id":"sh/298ryl4v","slide":3,"name":"Shape 2","bbox":[52.8,132.48,1171.2,0]}
+{"kind":"textbox","id":"sh/3ah8rqlg","slide":3,"name":"Text 3","text":"1  问卷调查\n测量收入约束、能源负担、极端天气暴露、绿色偏好、补贴敏感度与政策信任。","textPreview":"1  问卷调查 | 测量收入约束、能源负担、极端天气暴露、绿色偏好、补贴敏感度与政策信任。","textChars":43,"textLines":2,"bbox":[62.4,168,273.6,113.28]}
+{"kind":"textbox","id":"sh/obq90bml","slide":3,"name":"Text 4","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[339.84,208.32,21.12,28.8]}
+{"kind":"textbox","id":"sh/pcjqtg36","slide":3,"name":"Text 5","text":"2  居民分类\n采用LCA/聚类识别四类低收入居民，形成Agent类型参数。","textPreview":"2  居民分类 | 采用LCA/聚类识别四类低收入居民，形成Agent类型参数。","textChars":38,"textLines":2,"bbox":[367.68,168,273.6,113.28]}
+{"kind":"textbox","id":"sh/m5cra54z","slide":3,"name":"Text 6","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[645.12,208.32,21.12,28.8]}
+{"kind":"textbox","id":"sh/n6ls3alk","slide":3,"name":"Text 7","text":"3  Agent初始化\n为不同类型Agent设定支付能力、风险感知、补贴阈值、模仿系数。","textPreview":"3  Agent初始化 | 为不同类型Agent设定支付能力、风险感知、补贴阈值、模仿系数。","textChars":44,"textLines":2,"bbox":[672.96,168,273.6,113.28]}
+{"kind":"textbox","id":"sh/n2l4fq98","slide":3,"name":"Text 8","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[950.4,208.32,21.12,28.8]}
+{"kind":"textbox","id":"sh/m1c3mlsn","slide":3,"name":"Text 9","text":"4  政策情景仿真\n组合补贴强度、阶梯电价强度与极端天气情景，比较动态结果。","textPreview":"4  政策情景仿真 | 组合补贴强度、阶梯电价强度与极端天气情景，比较动态结果。","textChars":38,"textLines":2,"bbox":[978.24,168,273.6,113.28]}
+{"kind":"textbox","id":"sh/w7ulsvqp","slide":3,"name":"Text 15","text":"政策组合情景变量","textPreview":"政策组合情景变量","textChars":8,"textLines":1,"bbox":[72,497.27,196.33,30.73]}
+{"kind":"textbox","id":"sh/ja54na9g","slide":3,"name":"Text 16","text":"补贴强度：0% / 15% / 40%     阶梯电价：低 / 中 / 高     ","textPreview":"补贴强度：0% / 15% / 40%     阶梯电价：低 / 中 / 高","textChars":43,"textLines":1,"bbox":[72,532.8,1123.2,32.64]}
+{"kind":"textbox","id":"sh/6d0fytg3","slide":3,"name":"Text 9","text":"5  模型验证\n使用纵向问卷结果检验仿真结果，证明LLM-Agent based model可以作为政策组合的研究方法","textPreview":"5  模型验证 | 使用纵向问卷结果检验仿真结果，证明LLM-Agent based model可以作为政策组合的研究方法","textChars":59,"textLines":2,"bbox":[978.24,327.33,273.6,113.28]}
+{"kind":"textbox","id":"sh/sfix03y9","slide":3,"name":"Text 8","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[1091.73,289.92,21.12,28.8]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":"本页用于说明可执行路径：先用问卷识别类型，再转化为Agent参数，最后开展政策组合仿真并输出效率、公平与福利指标。"}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"研究二","textShapes":1}
+{"kind":"textbox","id":"sh/1cj2d8b6","slide":4,"name":"文本框 1","text":"研究二\n偏向于经济学","textPreview":"研究二 | 偏向于经济学","textChars":10,"textLines":2,"bbox":[477.07,272.27,640,113]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":""}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"T2","textShapes":24}
+{"kind":"textbox","id":"sh/j6dwfqds","slide":5,"name":"Text 15","text":"T2\n","textPreview":"T2 |","textChars":3,"textLines":2,"bbox":[280.73,399,580.4,193.33]}
+{"kind":"textbox","id":"sh/dgbulwnm","slide":5,"name":"Text 0","text":"研究问题：极端气候下，政府最低多少补贴能撬动低收入群体的绿色消费？","textPreview":"研究问题：极端气候下，政府最低多少补贴能撬动低收入群体的绿色消费？","textChars":33,"textLines":1,"bbox":[34.27,35.8,1075.73,40.33]}
+{"kind":"textbox","id":"sh/cf2tcr61","slide":5,"name":"Text 1","text":"以低收入居民为重点对象，识别“政府补贴促进绿色消费意愿”的最低有效阈值。","textPreview":"以低收入居民为重点对象，识别“政府补贴促进绿色消费意愿”的最低有效阈值。","textChars":36,"textLines":1,"bbox":[55.68,83.52,912,26.88]}
+{"kind":"textbox","id":"sh/z2tcnm5s","slide":5,"name":"Text 2","text":"EXTREME CLIMATE × GREEN CONSUMPTION","textPreview":"EXTREME CLIMATE × GREEN CONSUMPTION","textChars":35,"textLines":1,"bbox":[1092.67,43.2,131.33,24]}
+{"kind":"shape","id":"sh/yhkbe1o7","slide":5,"name":"Shape 3","bbox":[52.8,114.24,1174.08,0]}
+{"kind":"textbox","id":"sh/l4bupwny","slide":5,"name":"Text 4","text":"核心判断","textPreview":"核心判断","textChars":4,"textLines":1,"bbox":[64.32,142.08,96,26.88]}
+{"kind":"textbox","id":"sh/032tgr6d","slide":5,"name":"Text 5","text":"极端气候会提升居民对绿色消费的关注，但低收入群体受价格约束更强；因此，关键不是“有没有补贴”，而是“补贴达到多高才开始有效”。","textPreview":"极端气候会提升居民对绿色消费的关注，但低收入群体受价格约束更强；因此，关键不是“有没有补贴”，而是“补贴达到多高才开始有效”。","textChars":63,"textLines":1,"bbox":[170.88,135.36,1046.4,44.16]}
+{"kind":"textbox","id":"sh/n6dcr65o","slide":5,"name":"Text 6","text":"① 对象与场景\n• 低收入居民 / 气候影响显著地区（重庆）\n• 关注绿色产品的价格溢价与支付意愿\n• 极端高温、暴雨等作为外部冲击场景\n• 对低收入居民进行分类，异质性研究","textPreview":"① 对象与场景 | • 低收入居民 / 气候影响显著地区（重庆） | • 关注绿色产品的价格溢价与支付意愿 | • 极端高温、暴雨等作为外部冲击场景 | • 对低收入居民进行分类，异质性研究","textChars":87,"textLines":5,"bbox":[67.2,209.28,340.8,158.4]}
+{"kind":"textbox","id":"sh/m5kbi1oj","slide":5,"name":"Text 7","text":"② 两轮问卷\n• T1：基线态度、收入约束、绿色消费习惯\n• T2：极端气候影响后的态度变化\n• 每轮约 500 人；比较同一群体前后变化","textPreview":"② 两轮问卷 | • T1：基线态度、收入约束、绿色消费习惯 | • T2：极端气候影响后的态度变化 | • 每轮约 500 人；比较同一群体前后变化","textChars":69,"textLines":4,"bbox":[441.6,209.28,379.2,158.4]}
+{"kind":"textbox","id":"sh/w32dkbuh","slide":5,"name":"Text 8","text":"③ 补贴梯度\n• 设置 0%、5%、10%、15%、20%、25%...\n• 低收入群体的补贴敏感性\n• 识别最低有效补贴阈值","textPreview":"③ 补贴梯度 | • 设置 0%、5%、10%、15%、20%、25%... | • 低收入群体的补贴敏感性 | • 识别最低有效补贴阈值","textChars":63,"textLines":4,"bbox":[854.4,209.28,360,158.4]}
+{"kind":"textbox","id":"sh/x4vedgvm","slide":5,"name":"Text 9","text":"T1\n问卷基线调查","textPreview":"T1 | 问卷基线调查","textChars":9,"textLines":2,"bbox":[52.8,418.53,139.2,71.04]}
+{"kind":"textbox","id":"sh/ahkvi1cb","slide":5,"name":"Text 10","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[225.61,480.13,33.6,26.88]}
+{"kind":"textbox","id":"sh/v2twb6dw","slide":5,"name":"Text 11","text":"搭建Agent：\n极端气候\n感知/情景","textPreview":"搭建Agent： | 极端气候 | 感知/情景","textChars":19,"textLines":3,"bbox":[299.52,427.2,148.8,71.04]}
+{"kind":"textbox","id":"sh/k7mxovud","slide":5,"name":"Text 12","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[462.72,441.6,33.6,26.88]}
+{"kind":"textbox","id":"sh/58vehgvy","slide":5,"name":"Text 13","text":"改变补贴水平","textPreview":"改变补贴水平","textChars":6,"textLines":1,"bbox":[502.45,427.2,148.8,71.04]}
+{"kind":"textbox","id":"sh/i54fmlc7","slide":5,"name":"Text 14","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[659.52,441.6,33.6,26.88]}
+{"kind":"textbox","id":"sh/sb6xsvu9","slide":5,"name":"Text 16","text":"待估计阈值","textPreview":"待估计阈值","textChars":5,"textLines":1,"bbox":[933.12,399.36,211.2,26.88]}
+{"kind":"shape","id":"sh/tcfel0vu","slide":5,"name":"Shape 17","bbox":[904.32,509.76,273.6,0]}
+{"kind":"shape","id":"sh/hgrmpwj2","slide":5,"name":"Shape 18","bbox":[904.32,418.56,0,91.2]}
+{"kind":"textbox","id":"sh/gfi5grih","slide":5,"name":"Text 19","text":"补贴","textPreview":"补贴","textChars":2,"textLines":1,"bbox":[1144.32,517.44,43.2,19.2]}
+{"kind":"textbox","id":"sh/fe94nm1w","slide":5,"name":"Text 20","text":"意愿","textPreview":"意愿","textChars":2,"textLines":1,"bbox":[881.28,415.68,33.6,19.2]}
+{"kind":"shape","id":"sh/ud0ne10b","slide":5,"name":"Shape 21","bbox":[926.4,436.8,196.8,74.88]}
+{"kind":"shape","id":"sh/pkr6tgjy","slide":5,"name":"Shape 22","bbox":[1019.52,424.32,0,83.52]}
+{"kind":"textbox","id":"sh/4ji5kbid","slide":5,"name":"Text 23","text":"x%","textPreview":"x%","textChars":2,"textLines":1,"bbox":[1004.16,517.44,33.6,19.2]}
+{"kind":"textbox","id":"sh/3i94r61s","slide":5,"name":"Text 24","text":"最终输出：确定哪一档补贴开始显著提高绿色消费意愿，和“态度—行为”转化周期。","textPreview":"最终输出：确定哪一档补贴开始显著提高绿色消费意愿，和“态度—行为”转化周期。","textChars":38,"textLines":1,"bbox":[67.2,616.32,1142.4,40.32]}
+{"kind":"textbox","id":"sh/2h0ni107","slide":5,"name":"Text 9","text":"T2\n问卷二次调查","textPreview":"T2 | 问卷二次调查","textChars":9,"textLines":2,"bbox":[52.8,517.4,139.2,71.04]}
+{"kind":"textbox","id":"sh/5o7mhcju","slide":5,"name":"Text 13","text":"观察显著提升低收入居民绿色消费的最低补贴","textPreview":"观察显著提升低收入居民绿色消费的最低补贴","textChars":20,"textLines":1,"bbox":[701.39,426.27,148.8,71.04]}
+{"kind":"textbox","id":"sh/kny587i9","slide":5,"name":"文本框 28","text":"LLM-Agent based model","textPreview":"LLM-Agent based model","textChars":21,"textLines":1,"bbox":[423.53,528.4,426.67,38.67]}
+{"kind":"textbox","id":"sh/atcjidg7","slide":5,"name":"Text 10","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[110.27,486.73,21.07,26.87]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":""}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"模型设计：问卷+LLM- Agent-based Model","textShapes":19}
+{"kind":"textbox","id":"sh/yhg7epsj","slide":6,"name":"Text 0","text":"模型设计：问卷+LLM- Agent-based Model","textPreview":"模型设计：问卷+LLM- Agent-based Model","textChars":30,"textLines":1,"bbox":[52.8,36.48,835.2,40.32]}
+{"kind":"textbox","id":"sh/zi98nu94","slide":6,"name":"Text 1","text":"将居民异质性、社交网络影响和补贴情景转化为可反事实模拟的行为扩散模型。","textPreview":"将居民异质性、社交网络影响和补贴情景转化为可反事实模拟的行为扩散模型。","textChars":35,"textLines":1,"bbox":[55.68,83.52,912,26.88]}
+{"kind":"textbox","id":"sh/87ipkzal","slide":6,"name":"Text 2","text":"EXTREME CLIMATE × GREEN CONSUMPTION","textPreview":"EXTREME CLIMATE × GREEN CONSUMPTION","textChars":35,"textLines":1,"bbox":[945.6,43.2,278.4,24]}
+{"kind":"shape","id":"sh/98rqt4r6","slide":6,"name":"Shape 3","bbox":[52.8,114.24,1174.08,0]}
+{"kind":"textbox","id":"sh/ml07i9sv","slide":6,"name":"Text 4","text":"建模链条","textPreview":"建模链条","textChars":4,"textLines":1,"bbox":[65.28,142.08,100.8,28.8]}
+{"kind":"textbox","id":"sh/7m98ru9g","slide":6,"name":"Text 5","text":"纵向问卷用来\nAgent参数校准","textPreview":"纵向问卷用来 | Agent参数校准","textChars":16,"textLines":2,"bbox":[72,194.88,158.4,74.88]}
+{"kind":"textbox","id":"sh/oryp8fah","slide":6,"name":"Text 6","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[247.68,212.16,33.6,26.88]}
+{"kind":"textbox","id":"sh/pc76hkr2","slide":6,"name":"Text 7","text":"构建500个Agent\n（用电习惯+绿色消费意愿等）","textPreview":"构建500个Agent | （用电习惯+绿色消费意愿等）","textChars":26,"textLines":2,"bbox":[297.6,194.88,158.4,74.88]}
+{"kind":"textbox","id":"sh/h4bupgn6","slide":6,"name":"Text 8","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[474.24,212.16,33.6,26.88]}
+{"kind":"textbox","id":"sh/w32twb6l","slide":6,"name":"Text 9","text":"社交网络\n互动更新","textPreview":"社交网络 | 互动更新","textChars":9,"textLines":2,"bbox":[523.2,194.88,158.4,74.88]}
+{"kind":"textbox","id":"sh/v2tcn650","slide":6,"name":"Text 10","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[698.88,212.16,33.6,26.88]}
+{"kind":"textbox","id":"sh/u1kbu1ov","slide":6,"name":"Text 11","text":"补贴政策\n极端气候\n情景实验","textPreview":"补贴政策 | 极端气候 | 情景实验","textChars":14,"textLines":3,"bbox":[748.8,194.88,158.4,74.88]}
+{"kind":"textbox","id":"sh/5svutgni","slide":6,"name":"Text 12","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[925.44,212.16,33.6,26.88]}
+{"kind":"textbox","id":"sh/47mt0b6x","slide":6,"name":"Text 13","text":"集体绿色消费\n涌现结果","textPreview":"集体绿色消费 | 涌现结果","textChars":11,"textLines":2,"bbox":[974.4,194.88,158.4,74.88]}
+{"kind":"textbox","id":"sh/j6dcr65c","slide":6,"name":"Text 14","text":"Agent 属性\n• 收入水平：低收入 / 非低收入\n• 价格敏感度、环境态度、风险感知\n• 初始绿色消费意愿与消费习惯","textPreview":"Agent 属性 | • 收入水平：低收入 / 非低收入 | • 价格敏感度、环境态度、风险感知 | • 初始绿色消费意愿与消费习惯","textChars":60,"textLines":4,"bbox":[72,323.52,326.4,161.28]}
+{"kind":"textbox","id":"sh/i54bylor","slide":6,"name":"Text 15","text":"行为更新规则\n• 极端气候感知提高绿色消费动机\n• 补贴同样提高绿色消费动机\n• 极端气候提升能源价格（加不加？）\n• 社交网络产生同伴影响\n• 观察最低撬动低收入家庭绿色效应意愿的“涌现”补贴价格","textPreview":"行为更新规则 | • 极端气候感知提高绿色消费动机 | • 补贴同样提高绿色消费动机 | • 极端气候提升能源价格（加不加？） | • 社交网络产生同伴影响 | • 观察最低撬动低收入家庭绿色效应意愿的“涌现”补贴价格","textChars":99,"textLines":6,"bbox":[430.08,323.52,388.8,161.28]}
+{"kind":"textbox","id":"sh/twfux0ne","slide":6,"name":"Text 16","text":"模型优势\n• Social networks\n• 反事实实验\n• 意愿的改变是长期的、动态的\n• 纵向问卷更能捕捉极端气候对居民绿色消费意愿的变化规律\n","textPreview":"模型优势 | • Social networks | • 反事实实验 | • 意愿的改变是长期的、动态的 | • 纵向问卷更能捕捉极端气候对居民绿色消费意愿的变化规律 |","textChars":76,"textLines":6,"bbox":[854.4,323.52,350.4,161.28]}
+{"kind":"textbox","id":"sh/svmt4v6t","slide":6,"name":"Text 17","text":"关键结果变量","textPreview":"关键结果变量","textChars":6,"textLines":1,"bbox":[72,552.96,120,26.88]}
+{"kind":"textbox","id":"sh/cbe5g3ih","slide":6,"name":"Text 18","text":"政府最低绿色补贴 |  低收入家庭绿色消费意愿","textPreview":"政府最低绿色补贴 |  低收入家庭绿色消费意愿","textChars":23,"textLines":1,"bbox":[206.4,547.2,979.2,40.32]}
+{"kind":"textbox","id":"sh/dcnm98zm","slide":6,"name":"Text 19","text":"研究贡献：提供一个引入LLM的方法","textPreview":"研究贡献：提供一个引入LLM的方法","textChars":17,"textLines":1,"bbox":[72,625.92,1132.8,40.32]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":""}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"问卷预算：1000份居民样本的采购方案","textShapes":18}
+{"kind":"textbox","id":"sh/cb2tkvap","slide":7,"name":"Text 0","text":"问卷预算：1000份居民样本的采购方案","textPreview":"问卷预算：1000份居民样本的采购方案","textChars":19,"textLines":1,"bbox":[52.8,36.48,835.2,40.32]}
+{"kind":"textbox","id":"sh/dcbud0ra","slide":7,"name":"Text 1","text":"网页标价是标准零售价；实际成本取决于题量、筛选条件和是否对接官方销售。","textPreview":"网页标价是标准零售价；实际成本取决于题量、筛选条件和是否对接官方销售。","textChars":35,"textLines":1,"bbox":[55.68,83.52,912,26.88]}
+{"kind":"textbox","id":"sh/ydkbm5sv","slide":7,"name":"Text 2","text":"EXTREME CLIMATE × GREEN CONSUMPTION","textPreview":"EXTREME CLIMATE × GREEN CONSUMPTION","textChars":35,"textLines":1,"bbox":[945.6,43.2,278.4,24]}
+{"kind":"shape","id":"sh/zedcfa9g","slide":7,"name":"Shape 3","bbox":[52.8,114.24,1174.08,0]}
+{"kind":"textbox","id":"sh/kzmdova1","slide":7,"name":"Text 4","text":"采购流程","textPreview":"采购流程","textChars":4,"textLines":1,"bbox":[65.28,142.08,100.8,28.8]}
+{"kind":"textbox","id":"sh/l0vuh0rm","slide":7,"name":"Text 5","text":"最终版问卷\n30–45题","textPreview":"最终版问卷 | 30–45题","textChars":12,"textLines":2,"bbox":[72,194.88,158.4,74.88]}
+{"kind":"textbox","id":"sh/eh0ba1sr","slide":7,"name":"Text 6","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[247.68,212.16,33.6,26.88]}
+{"kind":"textbox","id":"sh/fi9c369c","slide":7,"name":"Text 7","text":"设置筛选与配额\n城市·年龄·住房","textPreview":"设置筛选与配额 | 城市·年龄·住房","textChars":16,"textLines":2,"bbox":[297.6,194.88,158.4,74.88]}
+{"kind":"textbox","id":"sh/baxkjqlk","slide":7,"name":"Text 8","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[474.24,212.16,33.6,26.88]}
+{"kind":"textbox","id":"sh/a9ojq5kz","slide":7,"name":"Text 9","text":"后台生成总价\n截图留存","textPreview":"后台生成总价 | 截图留存","textChars":11,"textLines":2,"bbox":[523.2,194.88,158.4,74.88]}
+{"kind":"textbox","id":"sh/xcz2l03q","slide":7,"name":"Text 10","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[698.88,212.16,33.6,26.88]}
+{"kind":"textbox","id":"sh/cbq1sv25","slide":7,"name":"Text 11","text":"联系官方销售\n学术优惠+发票","textPreview":"联系官方销售 | 学术优惠+发票","textChars":14,"textLines":2,"bbox":[748.8,194.88,158.4,74.88]}
+{"kind":"textbox","id":"sh/n6x0fqlo","slide":7,"name":"Text 12","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[925.44,212.16,33.6,26.88]}
+{"kind":"textbox","id":"sh/25ojml43","slide":7,"name":"Text 13","text":"比较书面报价\n确定平台","textPreview":"比较书面报价 | 确定平台","textChars":11,"textLines":2,"bbox":[974.4,194.88,158.4,74.88]}
+{"kind":"textbox","id":"sh/p8fih03e","slide":7,"name":"Text 14","text":"问卷星｜¥6,000–8,500\n• 50题、基础全国样本约¥6,000\n• 城市/收入/住房筛选会叠加费用\n• 学术项目可争取约5%–10%优惠","textPreview":"问卷星｜¥6,000–8,500 | • 50题、基础全国样本约¥6,000 | • 城市/收入/住房筛选会叠加费用 | • 学术项目可争取约5%–10%优惠","textChars":73,"textLines":4,"bbox":[72,323.52,326.4,161.28]}
+{"kind":"textbox","id":"sh/o761ov2t","slide":7,"name":"Text 15","text":"Credamo见数｜¥5,500–8,000\n• 计价与标签加价相对直观\n• 最终以项目书面报价为准","textPreview":"Credamo见数｜¥5,500–8,000 | • 计价与标签加价相对直观 | • 最终以项目书面报价为准","textChars":50,"textLines":3,"bbox":[430.08,323.52,388.8,161.28]}
+{"kind":"textbox","id":"sh/eh4jil4r","slide":7,"name":"Text 17","text":"建议预算","textPreview":"建议预算","textChars":4,"textLines":1,"bbox":[72,552.96,120,26.88]}
+{"kind":"textbox","id":"sh/id4ju1oz","slide":7,"name":"Text 18","text":"问卷样本采购：¥5,000-8000","textPreview":"问卷样本采购：¥5,000-8000","textChars":18,"textLines":1,"bbox":[206.4,547.2,979.2,40.32]}
+{"kind":"textbox","id":"sh/jedkn654","slide":7,"name":"Text 19","text":"风险控制：低价第三方样本可能偏年轻学生、缺少家庭住户并出现同质作答，不适合居民能源研究。","textPreview":"风险控制：低价第三方样本可能偏年轻学生、缺少家庭住户并出现同质作答，不适合居民能源研究。","textChars":44,"textLines":1,"bbox":[72,625.92,1132.8,40.32]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":""}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"模型预算：先降维试跑，验证不足再升维","textShapes":19}
+{"kind":"textbox","id":"sh/18byd4zy","slide":8,"name":"Text 0","text":"模型预算：先降维试跑，验证不足再升维","textPreview":"模型预算：先降维试跑，验证不足再升维","textChars":18,"textLines":1,"bbox":[52.8,36.48,835.2,40.32]}
+{"kind":"textbox","id":"sh/g72x4zyd","slide":8,"name":"Text 1","text":"先用聚类压缩相似家庭；只有低成本模型不能保留关键差异时，才进入高成本全分辨率模拟。","textPreview":"先用聚类压缩相似家庭；只有低成本模型不能保留关键差异时，才进入高成本全分辨率模拟。","textChars":41,"textLines":1,"bbox":[55.68,83.52,912,26.88]}
+{"kind":"textbox","id":"sh/ri9g7uhw","slide":8,"name":"Text 2","text":"EXTREME CLIMATE × GREEN CONSUMPTION","textPreview":"EXTREME CLIMATE × GREEN CONSUMPTION","textChars":35,"textLines":1,"bbox":[945.6,43.2,278.4,24]}
+{"kind":"shape","id":"sh/6h0fypgb","slide":8,"name":"Shape 3","bbox":[52.8,114.24,1174.08,0]}
+{"kind":"textbox","id":"sh/tkby9kzm","slide":8,"name":"Text 4","text":"两阶段路径","textPreview":"两阶段路径","textChars":5,"textLines":1,"bbox":[65.28,142.08,100.8,28.8]}
+{"kind":"textbox","id":"sh/sjix0zy1","slide":8,"name":"Text 5","text":"1000份问卷\n居民异质属性","textPreview":"1000份问卷 | 居民异质属性","textChars":14,"textLines":2,"bbox":[72,194.88,158.4,74.88]}
+{"kind":"textbox","id":"sh/je9g3ahk","slide":8,"name":"Text 6","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[247.68,212.16,33.6,26.88]}
+{"kind":"textbox","id":"sh/id0fu50z","slide":8,"name":"Text 7","text":"聚类相似回答\n合并高度相似家庭","textPreview":"聚类相似回答 | 合并高度相似家庭","textChars":15,"textLines":2,"bbox":[297.6,194.88,158.4,74.88]}
+{"kind":"textbox","id":"sh/o7ydoret","slide":8,"name":"Text 8","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[474.24,212.16,33.6,26.88]}
+{"kind":"textbox","id":"sh/98rehwve","slide":8,"name":"Text 9","text":"抽取20–50类\n代表性家庭","textPreview":"抽取20–50类 | 代表性家庭","textChars":14,"textLines":2,"bbox":[523.2,194.88,158.4,74.88]}
+{"kind":"textbox","id":"sh/m5gvmhwn","slide":8,"name":"Text 10","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[698.88,212.16,33.6,26.88]}
+{"kind":"textbox","id":"sh/n6pwfmd8","slide":8,"name":"Text 11","text":"低成本试跑\n检验模拟效果","textPreview":"低成本试跑 | 检验模拟效果","textChars":12,"textLines":2,"bbox":[748.8,194.88,158.4,74.88]}
+{"kind":"textbox","id":"sh/0jydkreh","slide":8,"name":"Text 12","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[925.44,212.16,33.6,26.88]}
+{"kind":"textbox","id":"sh/1k7edwv2","slide":8,"name":"Text 13","text":"效果足够：停止\n不足：升维","textPreview":"效果足够：停止 | 不足：升维","textChars":13,"textLines":2,"bbox":[974.4,194.88,158.4,74.88]}
+{"kind":"textbox","id":"sh/ehgvihwr","slide":8,"name":"Text 14","text":"阶段1｜降维方案：约¥1,500\n• 按问卷特征聚类居民家庭\n• 合并极其相似的回答与参数\n• 每类保留代表性家庭和核心特征\n• 先检验政策结果是否稳定、可信","textPreview":"阶段1｜降维方案：约¥1,500 | • 按问卷特征聚类居民家庭 | • 合并极其相似的回答与参数 | • 每类保留代表性家庭和核心特征 | • 先检验政策结果是否稳定、可信","textChars":79,"textLines":5,"bbox":[72,323.52,326.4,161.28]}
+{"kind":"textbox","id":"sh/zipwbmdc","slide":8,"name":"Text 15","text":"升级判断｜不是自动进入高成本方案\n• 能否复现问卷中的总体分布\n• 能否保留关键家庭类型差异\n• 政策情境排序是否稳定\n• 与个体级抽样验证误差是否可接受\n通过：采用降维模型；不通过：进入阶段2","textPreview":"升级判断｜不是自动进入高成本方案 | • 能否复现问卷中的总体分布 | • 能否保留关键家庭类型差异 | • 政策情境排序是否稳定 | • 与个体级抽样验证误差是否可接受 | 通过：采用降维模型；不通过：进入阶段2","textChars":97,"textLines":6,"bbox":[430.08,323.52,388.8,161.28]}
+{"kind":"textbox","id":"sh/kfixwbe1","slide":8,"name":"Text 16","text":"阶段2｜升维方案：最高约¥8,000\n• 增加家庭类型或恢复个体分辨率\n• 更多家庭直接调用LLM决策\n• 时间步、政策情境与重复实验增加\n• 参数搜索和稳健性检验同步扩张","textPreview":"阶段2｜升维方案：最高约¥8,000 | • 增加家庭类型或恢复个体分辨率 | • 更多家庭直接调用LLM决策 | • 时间步、政策情境与重复实验增加 | • 参数搜索和稳健性检验同步扩张","textChars":86,"textLines":5,"bbox":[854.4,323.52,350.4,161.28]}
+{"kind":"textbox","id":"sh/lgbepgvm","slide":8,"name":"Text 17","text":"预算区间","textPreview":"预算区间","textChars":4,"textLines":1,"bbox":[72,552.96,120,26.88]}
+{"kind":"textbox","id":"sh/tw7e9gnq","slide":8,"name":"Text 18","text":"理想状态：降维有效，约¥1,500｜压力上限：升维至个体级，最高约¥8,000","textPreview":"理想状态：降维有效，约¥1,500｜压力上限：升维至个体级，最高约¥8,000","textChars":39,"textLines":1,"bbox":[206.4,547.2,979.2,40.32]}
+{"kind":"textbox","id":"sh/svydgb65","slide":8,"name":"Text 19","text":"成本爆炸原因：决策单元 × 时间步 × 政策情境 × 参数组合 × 重复次数共同放大Token调用量。","textPreview":"成本爆炸原因：决策单元 × 时间步 × 政策情境 × 参数组合 × 重复次数共同放大Token调用量。","textChars":51,"textLines":1,"bbox":[72,625.92,1132.8,40.32]}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":""}

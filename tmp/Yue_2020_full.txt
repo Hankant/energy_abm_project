@@ -1,0 +1,789 @@
+                                                               Journal of Cleaner Production 252 (2020) 119623
+
+
+
+                                                             Contents lists available at ScienceDirect
+
+
+                                                      Journal of Cleaner Production
+                                              journal homepage: www.elsevier.com/locate/jclepro
+
+
+
+
+Energy-saving behavior of urban residents in China: A multi-agent
+simulation
+Ting Yue a, Ruyin Long a, *, Hong Chen a, Junli Liu a, Haiwen Liu a, Yu Gu b
+a
+ School of Management, China University of Mining and Technology, Xuzhou, 221116, China
+b
+ Joint Institute for Regional Earth System Science and Engineering and Department of Atmospheric and Oceanic Sciences, University of California, Los
+Angeles, CA, 90095, USA
+
+
+
+
+a r t i c l e i n f o                                  a b s t r a c t
+
+Article history:                                       With recent improvements in residents’ quality of life and the implementation of the two-child policy,
+Received 21 March 2019                                 guiding the energy-saving behavior of urban residents has become a focus for achieving the national
+Received in revised form                               goals of the sustainable development strategy in China. Considering the subjective initiatives of in-
+19 November 2019
+                                                       dividuals in a realistic environment is the key to studying energy-saving behavior and guiding policy
+Accepted 8 December 2019
+Available online 11 December 2019
+                                                       making. This study builds a simulation model of the energy-saving behavior of urban residents using
+                                                       agent-based modeling and simulation (ABMS) methods, which are based on complex adaptive theory. By
+Handling editor: Yutao Wang                            means of artiﬁcial neural networks and the Netlogo simulation platform, the subsequent effect of
+                                                       behavioral outcomes due to the short- and long-term inﬂuence of energy-saving behavior and intentions
+Keywords:                                              is analyzed in different policy situation. The results show that energy-saving intentions and behavior are
+Urban residents                                        poorly matched in the absence of an external policy framework. In the optimal policy situation, residents’
+Energy-saving behavior                                 energy-saving intentions and behavior have improved signiﬁcantly. Policies can signiﬁcantly encourage
+Policy situation                                       energy-saving intentions to become behavior. Different kinds of situational factors have different effects
+Multi-agent simulation
+                                                       on intentions and the four types of energy-saving behavior. Finally, relevant policy implications are
+                                                       proposed based on analysis of the simulation results.
+                                                                                                                          © 2019 Elsevier Ltd. All rights reserved.
+
+
+
+
+1. Introduction                                                                           to save energy and establishing a long-term mechanism to do so
+                                                                                          have become increasingly crucial. Energy demand-side manage-
+    In the most highly populated country in the world, the energy                         ment policy is considered a suitable way to realize sustainable
+consumption of Chinese residents has become an important source                           development and pursue efﬁciency and fairness. At the same time,
+of energy demand and carbon emissions (Wang et al., 2015; Zhou                            the concept of green consumption should be widely recognized,
+and Yang, 2016; Liao and Shi, 2018). In recent years, the direct                          such as purchasing green building preferably (Song et al., 2018). A
+growth of the energy consumption of Chinese residents for daily                           thrifty, green low-carbon, civilized, and healthy lifestyle and its
+living activities has reached 542.09 million tons of standard coal in                     associated consumption patterns should be formed, especially
+2016, accounting for 12.44% of total energy consumption and rep-                          under the background of the sharp increasing in energy con-
+resenting an increase of 1.97 times that in 2005 (NBSC, 2017). In                         sumption for the past few years (Zhang et al., 2019). Hence, an in-
+addition, the study shows that energy consumption of families with                        depth study of residents’ energy-saving behavior is needed.
+children is generally higher than that of other families (Yue et al.,                        As a kind of environmental protection behavior, the selection
+2013). After “the universal two-child policy” was instituted, the                         process of residents’ energy-saving behavior is complex and has
+energy consumption of residents for daily living activities is ex-                        many inﬂuencing factors. Many related studies have been carried
+pected to show a rapid growth trend. Therefore, guiding residents                         out on psychological characteristics, demographic and family
+                                                                                          characteristics, policy factors, and so on. In society, individuals not
+                                                                                          only interact with the environment, but are also affected by others.
+                                                                                          Therefore, under adjustments of situational factors, the purpose of
+ * Corresponding author.
+   E-mail addresses: yueting2729@163.com (T. Yue), longruyin@163.com (R. Long),
+                                                                                          this study is to construct a simulation model system representing
+hongchenxz@163.com (H. Chen), TS18070114A31@cumt.edu.cn (J. Liu),                         residents’ energy-saving behavior, realize the intelligence and
+TS18070113A31@cumt.edu.cn (H. Liu), gu@atmos.ucla.edu (Y. Gu).                            interaction of resident subjects, and design the basic attributes,
+
+https://doi.org/10.1016/j.jclepro.2019.119623
+0959-6526/© 2019 Elsevier Ltd. All rights reserved.
+2                                              T. Yue et al. / Journal of Cleaner Production 252 (2020) 119623
+
+
+behavior rules, and simulation ﬂow of various simulation subjects.               purchase hybrid electric vehicles signiﬁcantly affects purchasing
+The next step is to develop a simulation system to study the re-                 behavior.
+lationships between policy guidance and the emergence of energy-
+saving behavior and to evaluate dynamic adjustments to policy                    2.3. External situational factors
+situation factors. At the same time, by comparing and analyzing the
+effect of different policy situational factors on different types of                 As individuals in society and a behavior subject, residents can
+energy-saving behavior, the effect of behavioral results on long-                feel social role effects and social pressure in the process of adapting
+term energy-saving intentions can be determined and the effec-                   to the surrounding environment and gradually form some cogni-
+tiveness of policy guidance can be explored, so as to make sug-                  tion of social values and moral norms through learning or imitation,
+gestions for guiding the design of policy systems.                               thus affecting their behavior. Therefore, external situational factors
+    This paper is organized as follows. Section 2 presents the liter-            such as social pressure, policy, and the behaviors of other in-
+ature review. Section 3 describes the construction of the conceptual             dividuals’ also have an important inﬂuence on an individual’s
+model. Section 4 presents the agent attributes, behavior rules, and              choice of behavior (Ajzen and Driver, 1991; Nowak et al., 2014).
+Netlogo system setting. In Section 5, the results of the analysis are            Nolan et al. (2008) have conducted an energy-saving survey of 810
+presented and discussion is presented in Section 6. Finally, in Sec-             residents in California and found that social norms are more pre-
+tion 7, conclusions are drawn and policy implications are proposed.              dictive of energy-saving behavior than other related beliefs.
+                                                                                 Handgraaf et al. (2013) have argued that social incentives can
+2. Literature review                                                             encourage people to abide by social norms and hence engage in
+                                                                                 more green consumption behavior. Pro-environmental social
+   The existing literatures on energy-saving behavior mainly focus               norms have a signiﬁcant impact on both green purchasing and
+on inﬂuencing factors, guidance strategies, and energy-saving                    green behavior (Liobikiene_ et al., 2016).
+policies, among which the studies on inﬂuencing factors mainly                       According to the Theory of Planned Behavior, if the behavioral
+focus on demographic factors, cognitive psychological factors, and               agents have stronger subjective norms, they will also have stronger
+external situational factors.                                                    behavioral intentions (Ajzen and Driver, 1991). As in society,
+                                                                                 energy-saving individuals not only interact with the natural envi-
+2.1. Demographic factors                                                         ronment, but are also inﬂuenced by other people’s behavior. In-
+                                                                                 dividuals have the characteristics of social learning, social
+   Demographic factors mainly include gender, age, income level,                 comparison, and social identity. Through observing and comparing
+and level of education and so on. There is no deﬁnite conclusion                 other people’s behavior and social norms, individuals will adjust
+about the effect of gender on energy-saving behavior. Some studies               their self-perception and evaluation to adopt energy consumption
+have found that women are more likely than men to engage in pro-                 patterns that are consistent with others or socially identiﬁable
+environmental activities, but others have concluded the reverse                  (Ajzen and Driver, 1991; Mi et al., 2018). Researchers often use
+(Gaspar and Antunes, 2011; Vicente-Molina et al., 2013; Trotta,                  intervention experimental methods to explore the impact of
+2018). Frederiks et al. (2015) believed that age have a positive in-             different intervention strategies, including information feedback,
+ﬂuence on individuals’ energy-saving behavior, whereas Sardianou                 goal commitment, role model demonstrations, and peer education,
+(2007) believed that this inﬂuence is negative. In addition, Belaid              on energy-saving behavior. A study by Winett et al. (1985) shows
+and Garcia (2016) have pointed out that energy-saving potential                  that role model demonstrations can promote social learning,
+shows an inverted U-shape with age. Poruschi and Ambrey (2016)                   enabling observers to make energy-saving behavior consistent with
+have showed that income level affects people’s choice of energy-                 role models. Komatsu and Nishio (2015) have found that social
+saving approach. High-income groups will make investments to                     comparison has a signiﬁcant positive impact on energy-saving
+improve energy efﬁciency, whereas low-income groups tend to                      behavior. Through ﬁeld experiments, Nilsson et al. (2015) have
+adopt daily direct energy-saving measures. Education and knowl-                  found that group employees who received feedback have a higher
+edge of environmental issues clearly inﬂuence pro-environmental                  level of changing energy-using behavior than those who do not.
+behavior (Vicente-Molina et al., 2013; Varela-Candamio et al.,                   Fujimi et al. (2016) further found that customized information
+2018; Zhang et al., 2018).                                                       works best for energy-saving behavior when used in conjunction
+                                                                                 with public commitments.
+2.2. Cognitive psychological factors                                                 A few scientists have used simulation methods to explore the
+                                                                                 impact of external situational factors on energy-saving behavior.
+   Cognitive psychological factors mainly include values, attitude,              Anderson et al. (2014) constructed a model to study how energy
+subjective norms, and behavioral intentions. Researchers usually                 consumption behavior spreads through social networks and
+hold that values are closely related to environmental behavior                   described how households change their energy consumption
+(Wang et al., 2013; Zhang et al., 2018). The stronger the household              behavior through social inﬂuence. Furthermore, Anderson and Lee
+environmental values that individuals or households have, the                    (2016) constructed an empirical behavior model to simulate the
+more possible it is for them to adopt energy-saving behavior. Many               effect of information feedback on energy-saving behavior. The re-
+scholars regard attitude as an important and positive psychological              sults showed that when individual or normative feedback was sent
+variable affecting energy-saving behavior (Ajzen and Driver, 1991;               to all users in the network, total energy consumption tended to
+Ek and So € derholm, 2010; Andrzej et al., 2014; Prete et al., 2017;             reach an average value. Lopes et al. (2016) used the Energy Plus/
+Tauﬁque and Vaithianathan, 2018; Casalo     and Escario, 2018). Liu             Design Builder software as a simulation tool to estimate the po-
+et al. (2018) hold that residents’ subjective cognition, perceived               tential of various energy-saving behaviors. The results indicated
+usefulness and environmental attitude could predict their will-                  that daily energy-saving behaviors and investing in efﬁcient
+ingness to buy green buildings. Based on descriptive analysis and                equipment both had signiﬁcant energy-saving potential, but that
+path analysis, Wang et al. (2013) have revealed that behavioral                  investing in efﬁcient equipment had higher energy-saving potential
+intention plays the most important role in explaining the level of               than daily energy-saving behavior.
+sustainable consumption behavior. Wang et al. (2016) have sur-                       From the existing literatures, it is not hard to discover that
+veyed 443 urban residents in China and found that the intention to               studies on demographic and cognitive psychological factors often
+                                               T. Yue et al. / Journal of Cleaner Production 252 (2020) 119623                                     3
+
+
+use questionnaire survey methods, structural equation models, and                refers to the reduction of energy consumption by investing in
+multivariate statistical analysis. Other scientists have used inter-             energy-efﬁcient products or equipment to improve energy efﬁ-
+vention methods to study external situational factors. However,                  ciency. For example, residents take the initiative in purchasing
+these methods cannot easily clarify the dynamic adjustment of                    energy-saving lamps and efﬁcient household appliances. (4)
+situational factors and compare the impact on various types of                   Interpersonal facilitation of behavior (IFB) refers to a situation
+energy-saving behavior. Using these methods, it is also hard to                  where residents have not only committed themselves to saving
+determine the long-term effects of behavioral consequences on                    energy, but also encourage others to implement energy-saving
+energy saving and to evaluate the impact of interaction between                  behavior through interpersonal activities. For example, residents
+residents on their behavioral intentions.                                        take the initiative to convey energy-saving information to friends
+    Therefore, under the adjustment of situational factors, the                  or colleagues, share energy-saving experiences, participate in
+objective of this study was to study the inconsistency between                   energy-saving and environmental protection communities or or-
+individual intention and behavior and the impact of this inconsis-               ganizations, and prevent other people’s energy waste.
+tency on the perception of individual behavior results and on                        The outcome perception of energy-saving behavior refers to
+subsequent behavioral intentions. Whether dynamic interaction                    how residents perceive the beneﬁts of behavior change after
+among individuals leads to dynamic changes in behavioral in-                     implementing energy-saving behavior. This paper divides this topic
+tentions is also discussed.                                                      into two dimensions: the outcome perception of economic savings
+                                                                                 and that of spiritual satisfaction.
+3. Conceptual model                                                                  By analysis of the questionnaire data using multivariate statis-
+                                                                                 tical and structural equation models, it was found that situational
+3.1. The basis of model construction                                             factors have a regulatory effect on the process leading from
+                                                                                 behavioral intention to behavior implementation, i.e., energy-
+    To construct the conceptual model and obtain basic data on                   saving behavior is inﬂuenced both by an energy-saving intention
+energy-saving behavior and the inﬂuencing factors of urban resi-                 and by external situational factors which refer to the external fac-
+dents, a questionnaire survey was conducted. The questionnaire                   tors that affect the environmental behavior of individuals (Ajzen
+was based on a study of the energy-saving behavior of urban res-                 and Driver, 1991; Andrzej et al., 2014). Individuals’ perception of
+idents in Jiangsu Province, which was carried out in previous                    the behavioral outcome can have an impact on behavioral in-
+research by the authors (Yue et al., 2013). The questionnaire con-               tentions, and therefore the individual determines whether to
+tained social demographic characteristics, psychological charac-                 implement energy-saving behavior based on an energy-saving
+teristics, energy-saving behavior, behavioral outcome perceptions,               behavioral intention and external situational factors (Iwata et al.,
+and policy situational factors. In November 2013, a total of 653                 2015,Ajzen, 2002). According to the results of the questionnaire
+paper questionnaires and 867 online questionnaires were collected                survey, external situational factors have a regulatory effect on the
+from urban residents in eastern China. Among these, there were                   process leading from energy-saving behavioral intention to
+520 valid paper questionnaires and 683 valid online questionnaires,              behavior. Among external situational factors, social norms related
+and the effective recovery rate was 79.14%. The results of reliability           to energy saving (SNES), popularization of economic energy-saving
+and validity analysis showed that Cronbach’s alpha coefﬁcient for                policies (PEEP), popularization of guided energy-saving policies
+each of the variables was above 0.6 and that the correlation coef-               (PGEP), execution and validity of energy-saving policies (EVEP),
+ﬁcient between the items and the total was greater than 0.4. The                 execution and validity of information intervention (EVII), and price
+scales of the Kaiser-Meyer-Olkin (KMO) and Bartlett test results and             level of energy (PRIE) play a positive role in moving behavioral
+of exploratory and conﬁrmatory factor analysis results were                      intention towards behavior implementation. Energy-saving prod-
+reasonable. Therefore, the reliability and structural validity of the            uct attributes (EPA) only have a positive effect on investment
+scale were deemed to be high. The results of descriptive statistical             behavior regarding energy-efﬁcient products, and the price of
+analysis showed that effective samples were evenly distributed                   energy-saving products (PRIP) has a negative effect on them (as
+over the social-demographic characteristics (gender, age, educa-                 shown in Table 1).
+tional background, and occupation type), as well as over the dis-
+tribution of household statistical characteristics (residential types,           3.2. Model construction
+residential area, number of family members, household structure,
+household income level, and the proportion of household energy                       From a microcosmic perspective, the speciﬁc behavior of agents,
+expenditure). Afterwards, the inherent and external inﬂuencing                   the parameters, the interaction rules among agents, and the
+factors and the mechanism of the energy-saving behavior were                     interaction rules between agents and the environment were set
+analyzed by means of statistical analysis software and the struc-                based on complex adaptive system (CAS) theory and the ABMS
+tural equation model, which provided the empirical basis and data                method. The system was simulated by combining the microscopic
+foundation for building the simulation model.                                    behavior of the system and the macroscopic “emerging” phenom-
+    In this paper, the energy-saving behavior of urban residents was             ena (Taylor and Suzana, 2018). Therefore, with the help of CAS
+divided into four types according to a literature review and previ-              theory and agent simulation modeling theory, the conceptual
+ous interviews with residents. (1) Habit adjustment behavior (HAB)               model of the energy-saving behavior of urban residents was
+refers to the behavior of reducing energy consumption by changing                designed on the basis of an empirical analysis of the questionnaire
+daily energy use habits without sacriﬁcing quality of life. For                  survey.
+example, residents can turn off the lights when leaving the room or                  In the simulation model of urban residents’ energy-saving
+unplug the power supply to reduce energy consumption when                        behavior, it was assumed that the urban residents’ energy-saving
+electrical appliances are not used for a long time. (2) Quality                  management system is a dynamic and integral system composed
+threshold behavior (QTB) refers to behavior that reduces energy                  of a plurality of agents with nonlinear interaction according to the
+consumption by changing patterns of daily energy use, thus sacri-                initialization rules. The simulation system consisted of urban resi-
+ﬁcing a certain quality of life. For example, residents can purchase             dent agents, energy-saving policy-maker and enforcer agents, and
+electrical appliances less or use air conditioning and heaters in a              management agents, among whom various interactions occurred.
+controlled manner. (3) Energy efﬁciency investment behavior (EIB)                The management agents collected information about residents’
+4                                                          T. Yue et al. / Journal of Cleaner Production 252 (2020) 119623
+
+Table 1
+Abbreviations and deﬁnitions of variables.
+
+    Variables                                                   Abbreviations Deﬁnitions
+
+    Energy-saving behavior of Habit adjustment behavior         HAB              The behavior of reducing energy consumption by changing daily energy use habits without
+      urban residents                                                            sacriﬁcing quality of life
+                              Quality threshold behavior        QTB              Behavior that reduces energy consumption by changing patterns of daily energy use, thus
+                                                                                 sacriﬁcing a certain quality of life
+                              Energy efﬁciency investment       EIB              The behavior of energy consumption reduction by investing in energy-efﬁcient products or
+                              behavior                                           equipment to improve energy efﬁciency
+                              Interpersonal facilitation        IFB              The behavior of energy consumption reduction by encouraging others to implement energy-saving behavior through
+                              behavior                                           interpersonal activities
+    External situational      Social norms related to energy    SNES             The norms including the climate, the code of ethics, the state of public opinion and the code of conduct for energy
+      factors                 saving                                             conservation
+                              Popularization of economic        PEEP             The degree of residents’ familiarity to economic energy-saving policies
+                              energy-saving policies
+                              Popularization of guided          PGEP             The degree of residents’ familiarity to guided energy-saving policies
+                              energy-saving policies
+                              Execution and validity of         EVEP             The availability and usefulness of energy-saving policy to residents’ energy-saving behavior
+                              energy-saving policies
+                              Execution and validity of         EVII             The availability and usefulness of energy intervention information
+                              information intervention
+                              Price level of energy             PRIE             The price level of energy products used by residents in daily life, taking the ones of electricity
+                                                                                 and gas prices for example
+                              Energy-efﬁcient product           EPA              The attributes of energy-efﬁcient product, taking the technical level, service quality, credibility
+                              attributes                                         and availability of energy-saving products for example
+                              Price of energy-efﬁcient          PRIP             The price of household energy-efﬁcient appliances
+                              products
+
+
+
+
+energy-saving behavior through observation, evaluated the policy                                  to communicate within the social sphere. The individual’s intention
+effect, and gave feedback to the policy-making agents. Then the                                   and behavior are inﬂuenced by the interaction between the indi-
+policy-making agents adjusted the energy-saving policy measures                                   vidual and the external environment. In addition, the individual is
+and the process of transforming behavioral intention into behavior                                also affected by interaction with other residents, based on their
+implementation according to the feedback. The interaction of urban                                own subjective norms regarding what they expect to achieve in the
+residents with others can also change urban residents’ energy-                                    interaction.
+saving intention and behavior (as shown in Fig. 1).
+    It was assumed that an energy-saving behavioral intention is an                               4. Methods
+expectation of energy-saving outcomes. After implementing
+energy-saving behavior, urban residents determine the degree of                                      The Netlogo simulation system developed in this study included
+consistency between the energy-saving behavioral results and their                                an artiﬁcial neural network subsystem and a behavior simulation
+expectations. If there is a difference between the two, the intention                             subsystem. Dynamic adjustment and intervention of system pa-
+will then be gradually adjusted. The individual also has the ability                              rameters was realized by integrating the artiﬁcial neural network
+
+
+
+                                          Residents
+                                           Agent                        Perceived results are greater than expected, energy-saving intention will be increased.
+                                                                         Perceived results are less than expected, energy-saving intention will be weakened
+
+
+                                                           Energy-saving                                                                          Evaluation of
+                                                                                                                Behavior
+                                                         behavior intention                                                                     behavioral results
+
+
+
+
+                                                                                 Excitation
+                                             Economic measures
+                                                                                  Create conditions
+                                                                                                                           Energy-saving behavior
+                       Policy Making                                                                                        information collection
+                                             Technical measures                              Encourage
+                           Agent                                                                                                                              Management
+                                                                                                                                                                Agent
+                                             Information measures                                                         The evaluation of policy
+                                                                                                                               effectiveness
+
+
+
+                                                                      Feedback
+
+
+                                                            Fig. 1. Simulation concept model based on ABMS method.
+                                                T. Yue et al. / Journal of Cleaner Production 252 (2020) 119623                                         5
+
+
+subsystem and the behavior simulation subsystem into a model.                     the probability of the subject’s intention to adjust behavior was
+The simulation system operation had three main stages: initiali-                  determined by the value of the subjective normative attribute. The
+zation, artiﬁcial neural network training, and energy-saving                      subjective norms (SNj) of the resident agent were set to a stochastic
+behavior simulation. In the initialization stage, the “Setup” com-                and continuous value between 0 and 1, representing subjective
+mand was used to initialize the simulation system. During the                     norms from the weakest to the strongest. Behavioral intentions
+artiﬁcial network training stage, the developed artiﬁcial neural                  ranged from those that were most likely to be affected by other
+network was trained according to the survey data until the                        agents to those that would not be affected by other agents. Each
+computational accuracy of the network converged within an                         resident agent compared the subjective norm with the agents
+acceptable range. In the energy-saving behavior simulation stage,                 whose peripheral distance was less than 2 units away. The bigger
+the behavioral simulation was carried out according to the given                  the difference, the greater the probability of intention adjustment.
+parameters, which were controlled. The changes in the output re-                  In addition, it was assumed that each agent had no difference, and
+sults under different control parameters were observed, and the                   the initial intention attribute was randomly assigned. The assign-
+results were compared with the normal state. A detailed descrip-                  ment method was to extract a value randomly from “1, 2, 3, 4, 5",
+tion of the simulation system design is given in the following                    which indicated the initial value of the energy-saving intention of
+section.                                                                          the resident agent. “1” indicated that residents were reluctant to
+                                                                                  save energy, “2” that residents were less willing to save energy, “3”
+4.1. Agent attributes and behavior rules setting                                  that residents were neutral, “4” that residents were more willing to
+                                                                                  save energy, and “5” that residents were very willing to save energy.
+    In the absence of interference from external factors, behavior is                 In the interaction between the resident agent and the external
+entirely determined by intention. Therefore, it can be assumed that               environment, it was assumed that a change in the external envi-
+the behavioral intention of residents is deﬁned to be the expecta-                ronment was consistent with the behavior of each agent in the
+tion of outcome when implementing the corresponding energy-                       system. A resident agent’s perception of external situational factors
+saving behavior. The residents’ intention to save energy is deter-                will affect the choice of energy-saving behavior by residents, with
+mined by their psychological characteristics. The psychological                   the resident agent gradually adjusting behavior until a stable
+characteristics are endogenous and have some stability in the short               intention and behavior were formed. Residents’ energy-saving
+term. In this situation, expectations and behavioral results are                  behavior can be expressed as a function of energy-saving behav-
+equal, and the intention to save energy will not change. If residents             ioral intention and situational factors. The outcome perception of
+perceive the results of energy-saving behavior to be greater than                 the behavioral subject was determined by intention, behavior, and
+their expectations, the intention to save energy will slowly in-                  situational factors. Therefore, the residents’ behavior and behav-
+crease; if they are less than expected, the intention will slowly                 ioral perception functions can be calculated by the artiﬁcial neural
+weaken.                                                                           network, which contains the intention and situational factors of
+    The attributes and behavioral rules of the resident agents in the             energy-saving behavior, based on the data from the questionnaire
+Netlogo platform were set as follows: (1) The number of resident                  survey.
+agents. The number of resident agents is a controllable parameter
+that can be set freely. To make the model error smaller and the                   4.2. Netlogo system setting and parameter design based on the
+degree of ﬁt better, 500 research data points were randomly                       artiﬁcial neural network
+selected from 1203 research data points as the basic data of the
+artiﬁcial neural network, and the number of resident agents was set                   According to the statistical analysis results of the survey data
+to 500. (2) Location and activity range of resident agents. According             and the conceptual simulation model, an artiﬁcial neural network
+to the number of resident agents, resident agents were randomly                   was constructed based on the survey data. The input variables were
+assigned in the system, and their range of activities was randomly                subjective norms, the initial values of energy-saving behavioral
+ﬁxed. This study assumed that the size of the Netlogo world was                   intentions, and policy situational factor variables. The output var-
+49  41 tiles, i.e., the number of tiles was 2009. The range of ac-               iables were energy-saving behavioral intentions, outcome percep-
+tivities was the result of the total number of tiles divided by the               tions of energy-saving behavior, and four kinds of energy-saving
+total number of resident agents. (3) The interactive range of each                behavior. For each kind of behavior, “1” indicated the minimum
+resident agent. The interaction between resident agents was                       value of each context factor and “5” indicated its maximum value.
+completed by daily interaction with the surrounding residents. It                 The context factor value could be varied continuously from 1 to 5.
+was assumed that the activity range of each resident agent was the                Therefore, a back-propagation (BP) artiﬁcial neural network could
+set of tiles located less than 2 units from its coordinates, as shown             be established to calculate the energy-saving behavior and the
+in Fig. 2. Within this scope, the resident agents could carry out their           behavioral results for each resident agent. The input had 10 nodes,
+interactions in accordance with their own subjective norms, and                   including the subjective norms, the initial values of energy-saving
+their energy-saving intentions could be adjusted accordingly. (4) At              behavioral intentions, and eight kinds of policy situational factor
+time instant T, the energy-saving intention of the resident agent                 variables. The output had 6 nodes, including energy-saving
+was determined by the initial energy-saving intention and the re-                 behavioral intention, results of energy-saving behavior, and four
+sults of the initial energy-saving behavior. (5) At time instant T, the           kinds of energy-saving behavior. The number of hidden layer nodes
+energy-saving behavior was determined by the energy-saving                        is usually obtained by empirical and trial-and-error methods. To
+behavioral intention and the external environment change at                       simplify the model, the hidden layer nodes were set to 1. By
+instant T-1. The speciﬁc action path was mainly determined by the                 repeated trial and error, it was discovered that when the number of
+artiﬁcial neural network. Table 1 shows the speciﬁc settings of each              hidden layer nodes was set to 20, the error convergence of the
+resident agent’s attributes, such as subjective norms, energy-saving              neural network model was the fastest. At the same time, the
+behavioral intentions, energy-saving behavior, and the results of                 learning rate was set to 0.010. After a period of learning, the error of
+energy-saving behavior.                                                           the network was reduced to 0.0465, and the convergence of the
+    According to the survey results, each respondent had the natural              neural network was satisfactory, which indicated that the actual
+properties of strong or weak subjective norms. It was assumed that                survey data and the artiﬁcial neural network were well ﬁtted (as
+6                                             T. Yue et al. / Journal of Cleaner Production 252 (2020) 119623
+
+
+
+
+                                           Fig. 2. Distribution of resident agents on a two-dimensional lattice.
+
+
+
+                                                                                shown in Fig. 3).
+                                                                                    The following parameters were also included in the simulation
+                                                                                system: (1) The adjustment rate of behavior and intention. To
+                                                                                simplify the model and increase its running speed, the adjustment
+                                                                                rate of behavior and intention was set to 0.2, i.e., the adjustment
+                                                                                value for each Tick intention was 20% of the remaining value (the
+                                                                                difference between expectation and results) of the last Tick inten-
+                                                                                tion. (2) The feedback ratio of intention change, which was used to
+                                                                                control weights in terms of the effects of two behavioral outcomes
+                                                                                (economic savings and spiritual satisfaction) on intention change.
+                                                                                According to a regression analysis of the survey data, the long-term
+                                                                                and slow contribution rates of economic-saving perception and
+                                                                                spiritual-satisfaction perception to energy-saving behavioral
+                                                                                intention were 20% and 80% respectively. It was assumed that a
+                                                                                given change in behavior will always result in the same propor-
+                                                                                tional adjustment of energy-saving behavioral intention, but the
+                                                                                adjustment cycle was relatively long. (3) The updated interval of
+                                                                                intention, which was used to control the length of the cycle in
+                                                                                which the resident agent could adjust its intention to complete the
+                                                                                change according to external environment and behavioral choices.
+                                                                                It was assumed that the cycle of intention change was 200, i.e., an
+                                                                                agent needed 200 Ticks to complete the intention adjustment. The
+                                                                                parameter settings of the adjustment rates of behavior and inten-
+                                                                                tion and the update interval of intention did not have a substantial
+                                                                                effect on the simulation results and were designed to make simu-
+    Fig. 3. Artiﬁcial neural network and convergence curve.
+                                                                                lation results easier to obtain.
+                                                           T. Yue et al. / Journal of Cleaner Production 252 (2020) 119623                                                                                    7
+
+Table 2
+Attribute-settings for resident agents.
+
+  Attributes of resident agent                                                                                                Attribute description
+
+  Subjective norms of agent                                                                                                   SNj
+  The initial value of the energy-saving behavior intention of agent                                                          I0j ¼ f ðe1 ; e2 ; :::; e11 Þ
+  HAB of agent at the time T                                                                                                  Btj;H ¼ f1 ðItj ; SNEC tj ; PEEP tj ; PGEP tj ; EVEP tj ; EVII tj ; PRIEtj Þ
+  QTB of agent at the time T                                                                                                  Btj;Q ¼ f2 ðI tj ; SNEC tj ; PEEP tj ; PGEP tj ; EVEP tj ; EVII tj ; PRIEtj Þ
+  EIB of agent at the time T                                                                                                  Btj;E ¼ f3 ðItj ; SNEC tj ; PEEP tj ; PGEP tj ; EVEP tj ;
+                                                                                                                              EVII tj ; PRIEtj ; FEP tj ; PRIP tj Þ
+  IFB of agent at the time T                                                                                                  Btj;F ¼ f4 ðI tj ; SNEC tj ; PEEP tj ; PGEP tj ; EVEP tj ; EVII tj ; PRIEtj Þ
+  The perception of economic savings outcome of agent at the time T                                                           PEtj ¼ f5 ðI tj ; SNEC tj ; PEEP tj ; PGEP tj ; EVEP tj ;
+                                                                                                                              EVII tj ; PRIEtj ; FEP tj ; PRIP tj Þ
+  The perception of spiritual satisfaction outcome of agent at the time T                                                     PStj ¼ f6 ðItj ; SNEC tj ; PEEP tj ; PGEP tj ; EVEP tj ;
+                                                                                                                              EVII tj ; PRIEtj ; FEP tj ; PRIP tj Þ
+  Energy-saving behavior intention of agent at the time T                                                                     Itj ¼ f ðI 0j ; PE; PSÞ
+
+Note: SN represents subjective norms; j represents the j-th resident agent; I represents the resident agent’s intention to save energy; and e1 ; e2 ; :::; e11 represents factors of
+individual psychological characteristics. The superscript 0 indicates the initial period, and t represents the t-th period. B represents the resident agent’s choice of energy-saving
+behavior. The subscript H represents HAB. The subscript Q represents QTB. The subscript E represents EIB. The subscript F represents IFB. PE represents the perception of
+economic savings outcome from the implementation of energy-saving behavior. PS represents the perception of spiritual satisfaction outcome from the implementation of
+energy-saving behavior.
+
+
+
+5. Results                                                                                   from 1 to 5, leaving the other situational factors ﬁxed at their initial
+                                                                                             state values. The PRIP mode adjusted the value of PRIP from 5 to 1,
+5.1. Setting of the simulation mode of policy situation                                      leaving the other situational factors ﬁxed at their initial state
+                                                                                             values. Among these, because the energy-saving product attributes
+    The simulation system was divided into benchmark mode and                                and energy-saving product price levels only affect EIB, only the
+analysis mode in this study. The benchmark mode was based on the                             output results of energy-saving behavioral intention and the EIB
+statistical mean values of policy situational factors. Among these,                          were included in the energy-saving product attributes and energy-
+SNES was 2.50, PEEP was 3.28, PGEP was 2.19, EVEP was 2.28, EVII                             saving product price level mode.
+was 3.08, PRIE was 3.40, EPA was 3.54, and PRIP was 4.26 (as shown
+in Table 3). Different residents chose the energy-saving behavior
+                                                                                             5.2. Simulation output results in different policy situation modes
+appropriate to them and perceived behavioral results based on
+their behavioral intention. The state of the residents’ environment
+                                                                                                In the benchmark mode, according to the calculation results of
+was stable, and the values of their intentions did not change in the
+                                                                                             the artiﬁcial neural network, the behavioral choices, the behavioral
+benchmark mode.
+                                                                                             results, and the energy-saving behavioral intentions of resident
+    The analysis model included the policy-free incentive mode, the
+                                                                                             agents were trained to achieve an essentially stable state. Fig. 4
+optimal policy mode, and the mode for the implementation of the
+                                                                                             shows the simulation output results of behavioral intentions and
+various policies alone. In the analysis mode, the residents’ cognition
+                                                                                             the four kinds of energy-saving behavior. The output diagrams for
+of situational factors was changed by adjusting the external envi-
+                                                                                             the other policy modes were similar to Fig. 4, and hence the results
+ronment. Then the behavioral choices of residents were changed
+                                                                                             have been summarized in Table 2 to better compare the output
+and their perception of the behavioral results changed accordingly.
+                                                                                             results.
+Residents slowly adjusted their intention to adopt energy-saving
+                                                                                                From Fig. 4 and Table 4, the following conclusions can be drawn
+behavior according to the degree of matching between the results
+                                                                                             from the simulation output results for the various parameter-
+of the behavior and their expectations. The change tendencies of
+                                                                                             setting modes:
+residents’ behavioral intentions and behavioral choices were
+further observed and analyzed under environment change. Ac-
+                                                                                                 (1) In the benchmark mode, the stable outputs of the system are
+cording to empirical analysis, SNES, PEEP, PGEP, EVEP, EVII, and PRIE
+                                                                                                     basically consistent with the empirical research results,
+had a positive effect on energy-saving behavior. EPA had a positive
+                                                                                                     indicating that the random sample means were basically no
+effect on EIB, and PRIP had a negative effect on EIB. To better
+                                                                                                     difference from the means of large sample. Therefore, it can
+compare and analyze the effects of different policy factors, it was
+                                                                                                     be considered that the basic data of artiﬁcial neural network
+assumed that PRIP had a maximum value of 5 and the other situ-
+                                                                                                     was selected reasonably.
+ational factors had a minimum of 1, which was deﬁned as the
+                                                                                                 (2) In the policy-free mode, the resident agents have low values
+policy-free incentive mode. This mode was assumed to be the initial
+                                                                                                     of behavior intention of energy saving and energy-saving
+state of the system analysis mode. In contrast to the policy-free
+                                                                                                     behavior. The residents who have stronger intention also
+incentive mode, the policy optimal mode set the situational factor
+                                                                                                     implement HAB and EIB, but the output values are lower
+with positive adjustments to the maximum value of 5, and the
+                                                                                                     than the ones in the benchmark mode. The resident agents
+situational factor was set with negative adjustments to the mini-
+                                                                                                     with different initial behavior intention of energy saving
+mum value of 1.
+                                                                                                     seldom implement QTB and IFB without policy incentives.
+    The modes of various policies acting alone included modes of
+                                                                                                     Comparing the policy-free mode to the benchmark one,
+SNEC, PEEP, PGEP, EVEP, EVII, PRIE, EPA, and PRIP. The mode setting
+                                                                                                     residents’ behavior intention of energy saving is poorly
+method served to adjust one of the policy values to the maximum
+                                                                                                     matched with all kinds of energy-saving behavior.
+value and to ﬁx the remaining policy values at the minimum value.
+                                                                                                 (3) Under the optimal policy mode, the output values of four
+For example, the SNEC mode served to adjust the value of SNEC
+                                                                                                     types of energy-saving behavior and behavior intention of
+8                                                         T. Yue et al. / Journal of Cleaner Production 252 (2020) 119623
+
+Table 3
+Descriptive statistical analysis results of moderated variables.
+
+    Variables                 Mean values                    Standard deviation                     Item                    Mean values          Standard deviation
+
+    SNES                      2.50                           0.895                                  SNES1                   2.80                 0.857
+                                                                                                    SNES2                   2.54                 0.893
+                                                                                                    SNES3                   2.34                 0.923
+                                                                                                    SNES4                   2.33                 0.906
+    PEEP                      3.28                           1.424                                  PEEP1                   3.57                 1.501
+                                                                                                    PEEP2                   3.51                 1.284
+                                                                                                    PEEP3                   3.41                 1.412
+                                                                                                    PEEP4                   2.93                 1.453
+                                                                                                    PEEP5                   2.99                 1.471
+    PGEP                      2.19                           1.352                                  PGEP1                   2.26                 1.349
+                                                                                                    PGEP2                   2.12                 1.355
+    EVEP                      2.28                           1.370                                  EVEP1                   2.04                 1.420
+                                                                                                    EVEP2                   2.52                 1.320
+    EVII                      3.08                           0.983                                  EVII1                   3.19                 0.993
+                                                                                                    EVII2                   2.97                 0.973
+    PRIE                      3.40                           0.751                                  PRIE1                   3.38                 0.764
+                                                                                                    PRIE2                   3.41                 0.738
+    EPA                       3.54                           0.952                                  EPA1                    3.85                 0.881
+                                                                                                    EPA2                    3.38                 1.019
+                                                                                                    EPA3                    3.51                 1.003
+                                                                                                    EPA4                    3.43                 0.904
+    PRIP                      4.26                           0.682                                  PRIP1                   4.26                 0.682
+
+
+
+
+                                                            Fig. 4. Results of system output in the benchmark mode.
+
+
+
+           energy saving of resident agents have signiﬁcantly and                                   increases most sharply, followed by QTB, indicating that
+           sharply increased. The output values of the simulation sys-                              these two types of energy-saving behavior are most affected
+           tem are stable after running for a period of time. The mean                              by external situational factors. In general, under the optimal
+           value of HAB increases from 2.03 to 4.41, the mean value of                              policy mode, all kinds of energy-saving behavior increased
+           QTB increases from 1.61 to 4.18, the mean value of EIB in-                               signiﬁcantly. The average values of all kinds of energy saving
+           creases from 1.94 to 4.84, and the mean value of IFB increases                           behaviors are relatively with high stable output values
+           from 1.62 to 4.1. The mean value of behavior intention of                                ﬁnally. The behavior intention of energy saving also increases
+           energy saving increased from 2.84 to 3.30. Therefore, in the                             slowly after the behavior changes, and the increase also is
+           external optimal state, EIB will be best implemented, fol-                               relatively signiﬁcant.
+           lowed by HAB, and then QTB and IFB. From the difference                              (4) In the mode of SNEC, the output values of four types of
+           between the ﬁnal output and the initial state, among the four                            energy-saving behavior of resident agents all increase. The
+           types of energy-saving behavior of resident agents, EIB                                  increase of HAB is most signiﬁcant, increasing from the initial
+                                                       T. Yue et al. / Journal of Cleaner Production 252 (2020) 119623                                           9
+
+Table 4
+Simulation output results for different parameter-setting modes.
+
+ Policy situational modes of intention and behavior                Intention and behavior
+
+                                                                   Energy-saving behavior intention                HAB       QTB            EIB           IFB
+
+ The benchmark mode                                                3.18                                            3.26      2.32           2.53          2.26
+ The policy-free incentive mode                                    2.84                                            2.03      1.61           1.91          1.62
+ The optimal policy mode                                           3.3                                             4.41      4.18           4.84          4.1
+ The mode of SNEC                                                  3.23                                            4.22      3.13           2.83          3.58
+ The mode of PEEP                                                  2.88                                            3.77      3.93           3.97          1.8
+ The mode of PGEP                                                  3.19                                            4.08      2.9            2.69          3.63
+ The mode of EVEP                                                  3.1                                             4.02      3.36           3.53          3.28
+ The mode of EVII                                                  3.02                                            3.27      3.08           3.35          2.89
+ The mode of PRIE                                                  2.87                                            4.15      4.08           3.89          1.91
+ The mode of EPA                                                   2.84                                            e         e              4.16          e
+ The mode of PRIP                                                  2.86                                            e         e              4.27          e
+
+
+
+
+       2.03 to 4.22. IFB increases from 1.62 to 3.58 and QTB in-                                 promote residents’ behavior intention of energy saving in the
+       creases from 1.61 to 3.13. Meanwhile, EIB of resident agents                              long run.
+       increases weakly form 1.91 to 2.83. The behavior intention of                         (8) It could be seen in the mode of EVII, the residents’ four types
+       energy saving increases from 2.84 to 3.23. Overall, the in-                               of energy-saving behavior increases: HAB increases from the
+       ﬂuence of SNEC to HAB is mostly remarkable, that is to say,                               original 2.03 to 3.27, QTB increases from the original 1.61 to
+       SNEC can promote the residents’ HAB signiﬁcantly. The in-                                 3.08, EIB increases from the original 1.94 to 3.35 and IFB in-
+       ﬂuence of SNEC to HAB is followed by the one to IFB and then                              creases from the original 1.62 to 2.89. Behavior intention of
+       QTB. It showed that awareness of energy saving of residents                               energy saving changes from the original 2.84 to 3.02. As a
+       will be improved being inﬂuenced by SNEC. Thereby, resi-                                  whole, EVII better promotes residents to develop good
+       dents will be more willing to sacriﬁce a certain quality of life                          energy-saving behaviors. The higher the degree of informa-
+       to save energy.                                                                           tion intervention is and the more effective information
+   (5) As is shown in the mode of PEEP, the change of IFB output is                              intervention is, residents are more willing to sacriﬁce certain
+       small and increases from the original 1.62 to 1.80. HAB in-                               quality of life to realize energy saving and implement EIB and
+       creases from the original 2.03 to 3.77, QTB increases from the                            IFB. EVII has a long-term promotion to residents’ behavioral
+       original 1.61 to 3.93 and EIB increases from the original 1.94                            intention of energy saving.
+       to 3.97. The value of behavior intention of energy saving in-                         (9) Under the mode of PRIE, IFB has no signiﬁcant change, while
+       creases from the initial 2.84 to 2.88. In general, PEEP has no                            the other three types of energy saving behaviors change
+       obvious effect on IFB. But PEEP can encourage residents to                                obviously. HAB increases from 2.03 to 4.15, QTB increases
+       develop good habits of energy-saving behavior and imple-                                  from 1.61 to 4.08, EIB increases from 1.94 to 3.89. But resi-
+       ment EIB. Moreover, the higher understanding of economic                                  dents’ energy intention of energy saving only increases by
+       policies, the more willing residents were to sacriﬁce certain                             0.03 with no signiﬁcant change. In general, the improvement
+       quality of life to realize energy saving. However, PEEP has no                            of energy price level can better promote residents to adjust
+       signiﬁcant effect on residents’ behavior intention to save                                their behavior habits, sacriﬁce a certain quality of life to
+       energy.                                                                                   realize energy saving and invest on energy efﬁciency. But the
+   (6) In the mode of PGEP, among resident agents’ four types of                                 impact on residents’ behavior intention to save energy is not
+       energy-saving behavior, the change of EIB is small, increasing                            signiﬁcant.
+       from the original 1.94 to 2.69. Unlike EIB, QTB increases from                       (10) In the mode of EPA, EIB of the resident agents increases from
+       the original 1.61 to 2.90, HAB increases from the original 2.03                           1.94 to 4.16, indicating that EPA has a signiﬁcant impact on
+       to 4.08 and IFB increases signiﬁcantly from the original 1.62                             EIB. Under the mode of PRIP, EIB increases from 1.94 to 4.27
+       to 3.63. Behavior intention of energy saving increases from                               and 2.33, indicating that the price level of energy-efﬁcient
+       the original 2.84 to 3.13. Overall, PGEP inﬂuences EIB weakly,                            products has a signiﬁcant impact on EIB of resident agents.
+       but can better guide QTB, HAB and IFB. The more popularized                               Behavior intention of energy saving is not inﬂuenced by the
+       energy-saving policies are, the more willing to sacriﬁce the                              EPA and PRIP signiﬁcantly.
+       quality of life to achieve energy saving the residents were.
+       PGEP also can promote the residents to develop good habits                        6. Discussion
+       of saving energy, and actively promote others to save energy.
+       Behavior intention of energy saving also can be intensiﬁed                           A comparison of the simulation results of the policy-free situ-
+       for a long time.                                                                  ation and the optimal policy situation reveals that the energy-
+   (7) Under the mode of EVEP, all four types of energy saving                           saving behavioral intentions and the QTB has the worst match
+       behavior of resident agents have increased. HAB increases                         when external policy factors do not have an incentive effect. This
+       from the original 2.03 to 4.02, QTB increases from the orig-                      indicates that people who are willing to save energy are reluctant to
+       inal 1.61 to 3.36, EIB changes from the original 1.94 to 3.53,                    sacriﬁce their quality of life and to implement QTB. The degree of
+       and IFB increases from the original 1.62 to 3.28. Residents’                      matching between energy-saving behavioral intentions and IFB is
+       behavior intention of energy saving increases from the                            also low. This indicates that even if residents have energy-saving
+       original 2.84 to 3.10. In general, EVEP can better promote                        behavioral intentions, most of them will not take the initiative to
+       residents’ HAB, EIB and IFB. The higher EVEP implementation                       carry out QTB and IFB. Relatively speaking, residents have a high
+       is, the more willing the residents are to sacriﬁce a certain                      degree of matching between intention and HAB and EIB. However,
+       quality of life to achieve energy saving. EVEP also can                           judging from the mean values of the outputs of behavior and
+                                                                                         intention, the intention is not fully transformed into behavior. In
+10                                              T. Yue et al. / Journal of Cleaner Production 252 (2020) 119623
+
+
+the optimal policy mode of external environment, all types of                         (2) There are differences in the effects of various situational
+energy-saving behavior and energy-saving intentions signiﬁcantly                          factors on energy-saving intentions and the four types of
+increase, which indicating that overall optimization of policy fac-                       behavior. The promotional effect of SNES is signiﬁcant in
+tors will have a signiﬁcant impact on residents’ energy-saving                            promoting transformation from behavioral intention to HAB,
+behavior and intentions.                                                                  EIB, and IFB. SNES can change the energy-saving concepts of
+    Under the inﬂuence of different situational factors, SNES has the                     residents on a spiritual level and can improve residents’
+highest degree of inﬂuence on adjusting HAB. PRIE and PEEP have                           energy-saving behavioral intentions in the long run. Among
+the highest degree of impact on QTB. EPA, PRIP, PEEP, and PRIE have                       policy popularization factors, the degree of PEEP and PRIE
+higher impacts on EIB. PGEP and SNES have higher impacts on IFB.                          has signiﬁcant effects on the transformation of energy-
+On the whole, SNES have a signiﬁcant impact on HAB, QTB, and IFB.                         saving behavioral intentions to HAB, QTB, and EIB. Price,
+    PEEP has a signiﬁcant impact on HAB, QTB, and EIB, among                              tax, and other economic policy measures can induce resi-
+which EIB is the most strongly inﬂuenced. PGEP has signiﬁcant                             dents to feel the pressure of expenses and hence to pay more
+impacts on HAB, QTB, and IFB, as well as on EI. EVEP can signiﬁ-                          attention to adjusting their energy habits and living comfort
+cantly promote the implementation of four types of energy-saving                          and to the energy efﬁciency of energy-consuming equip-
+behavior and energy-saving behavioral intention. Increasing EVII                          ment. While residents feel energy consumption pressure and
+can effectively promote the implementation of energy-saving                               focus on energy efﬁciency at the same time, subsidies can
+behavior among residents, for example detailed bills of energy                            further encourage residents to buy energy-efﬁcient products.
+use and information intervention with energy-saving advice can                            However, PEEP has little impact on residents’ energy-saving
+encourage residents to save energy. PRIE has signiﬁcant effects on                        behavioral intentions in the long term. It is also difﬁcult to
+HAB, QTB, and EIB. EPA and PRIP have signiﬁcant impacts on EIB,                           change energy-saving intentions at the spiritual level. This
+but have little effect on energy-saving behavioral intentions.                            reﬂects the observation that economic policy can only
+    From the impact of different situational factors on the same type                     stimulate energy-saving behavior. Once the policy disap-
+of energy-saving behavior, HAB was mostly affected by SNES. QTB is                        pears, the corresponding behavior will also disappear.
+mostly inﬂuenced by PRIE and PEEP. EIB is mostly affected by PRIP,                    (3) Policy situational factors at the spiritual level can motivate
+EPA, and PEEP, followed by PRIE. IFB is mostly affected by PGEP,                          residents to adjust their energy-saving behavioral intentions.
+followed by SNES. PEEP and PRIE have the most signiﬁcant impact                           The behavioral results of economic savings have less effect on
+on QTB and EIB, indicating that residents are willing to save energy                      energy-saving intentions, but spiritual satisfaction can
+through purchasing energy-efﬁcient products and reducing the                              signiﬁcantly affect the intention to save energy. In the long
+pursuit of life comfort under the incentive of economic measures.                         term, SNES and PGEP have the greatest impact on the
+PGEP and SNES play signiﬁcant roles in HAB and IFB.                                       intention to save energy, with EVEP and EVII also having
+    Overall, SNES and PGEP have the greatest impact on the inten-                         great inﬂuence. After policy formulation, policy publication
+tion to save energy, followed by EVEP and EVII. The impacts of PGEP,                      and implementation are also pivotal. The execution and
+SNES, EVEP, and EVII are more extensive and effective. They can                           validity of guided economic energy-saving policies can not
+both inﬂuence energy-saving intentions and behavior and stimu-                            only induce residents to adjust their energy-saving habits,
+late the implementation of energy-saving behavior for a long time                         but also can encourage residents to sacriﬁce a certain quality
+by strengthening energy-saving intentions. SNES has greater effects                       of life to achieve energy savings, carry out energy-efﬁciency
+on HAB, QTB, and IFB. PGEP can signiﬁcantly affect the imple-                             investment, engage in interpersonal facilitation of energy-
+mentation of HAB and IFB and stimulate residents to sacriﬁce a                            saving behavior, and enhance residents’ energy-saving
+certain quality of life to save energy. EVEP and EVII have signiﬁcant                     behavioral intentions over the long-term. Therefore, we
+effects on all four types of energy-saving behavior. In the long run,                     should pay attention not only to the formulation and pro-
+these four kinds of policies can strengthen residents’ intention to                       motion of energy-saving policies, but also to their imple-
+implement energy-saving behavior. Therefore, the effect of these                          mentation and supervision, so that residents can understand
+four kinds of policy measures has universal and lasting character-                        the relevant content of the policy and make the corre-
+istics compared with other types of policy measures. Therefore, it is                     sponding behavioral changes.
+the best policy group for guiding residents to implement energy-
+saving behavior over the long-term.
+                                                                                  7.2. Policy implications
+7. Conclusions and policy implications
+                                                                                     In summary, creating good energy-saving social norms,
+7.1. Conclusions                                                                  improving the degree of popularization of guided energy-saving
+                                                                                  policies, and strengthening the execution and validity of policy
+   Based on survey data, this study used CAS theory and artiﬁcial                 implementation and information intervention can stimulate resi-
+neural networks to simulate the energy-saving behavior of urban                   dents to take the initiative to induce others to implement energy-
+residents using the Netlogo multi-agent simulation platform and                   saving behavior, resulting in a good energy-saving interpersonal
+drew the following conclusions.                                                   environment that will help residents develop good energy-saving
+                                                                                  habits and engage in a rational pursuit of quality of life. More-
+     (1) The choice process of residents when moving from energy-                 over, these measures can change the energy-saving concepts of
+         saving intentions to energy-saving behavior is a steady                  residents on the spiritual level and strengthen the intention behind
+         state formed by the long-term comprehensive effect of in-                residents’ energy-saving behavior. This will encourage the imple-
+         dividual internal psychological factors and external envi-               mentation of energy-saving behavior over the long-term.
+         ronmental factors. Energy-saving intentions and behavior                    Interaction between residents has a great impact on their
+         are poorly matched in the absence of an appropriate external             energy-saving behavior. We should pay attention to the impact of
+         policy. EI and QTB have the worst match, followed by IFB. The            residents’ subjective norms on energy-saving behavior. Therefore,
+         overall optimization of policies has signiﬁcant impact on                the government should enrich their guided energy-saving policies,
+         residents’ energy-saving behavior and intentions.                        increase the intensity of education and publicity on energy-saving
+                                                            T. Yue et al. / Journal of Cleaner Production 252 (2020) 119623                                                              11
+
+
+behavior, create a good atmosphere of energy-saving social norms,                                  behavior and the role of information. Energy Policy 38, 1578e1587. https://
+                                                                                                   doi.org/10.1016/j.enpol.2009.11.041.
+and create better energy-saving communication platforms to
+                                                                                              Frederiks, R.E., Stenner, K., Hobman, V.E., 2015. The socio-demographic and psy-
+strengthen the energy-saving behavioral intentions of residents.                                   chological predictors of residential energy consumption: a comprehensive re-
+The government should strengthen the execution and validity of                                     view. Energies 8, 573e609. https://doi.org/10.3390/en8010573.
+information intervention, encourage residents to develop energy-                              Fujimi, T., Kajitani, Y., Chang, S.E., 2016. Effective and persistent changes in
+                                                                                                   household energy-saving behaviors: evidence from post-tsunami Japan. Appl.
+saving targets, build and improve the query platforms that pro-                                    Energy 167, 93e106. https://doi.org/10.1016/j.apenergy.2016.01.027.
+vide instant information to households, strengthen the manage-                                Gaspar, R., Antunes, D., 2011. Energy efﬁciency and appliance purchases in Europe:
+ment of household energy consumption, and increase the                                             consumer proﬁles and choice determinants. Energy Policy 39, 7335e7346.
+                                                                                                   https://doi.org/10.1016/j.enpol.2011.08.057.
+corresponding publicity to encourage residents to inquire actively                            Handgraaf, M.J., De Jeude, M.A.V.L., Appelt, K.C., 2013. Public praise vs. private pay:
+about household energy consumption information. Raising resi-                                      effects of rewards on energy conservation in the workplace. Ecol. Econ. 86,
+dents’ awareness of their own energy consumption can stimulate                                     86e92. https://doi.org/10.2139/ssrn.1955898.
+                                                                                              Iwata, K., Katayama, H., Arimura, H.T., 2015. Do households misperceive the beneﬁts
+initiatives to implement energy-saving behavior.                                                   of energy-saving actions? Evidence from a Japanese household survey. Energy
+                                                                                                   Sustain. Dev. 25, 27e33. https://doi.org/10.1016/j.esd.2014.12.005.
+Author contributions                                                                          Komatsu, H., Nishio, K., 2015. An experimental study on motivational change for
+                                                                                                   electricity conservation by normative messages. Appl. Energy 158, 35e43.
+                                                                                                   https://doi.org/10.1016/j.apenergy.2015.08.029.
+     Conceptualization, T.Y. and R.L.; Data curation, T.Y., J.L. and H.L.;                    Liao, X.C., Shi, X.P., 2018. Public appeal, environmental regulation and green in-
+Formal Analysis, T.Y., J.L. and H.L.; Investigation and Simulation, T.Y.,                          vestment: evidence from China. Energy Policy 119, 554e562. https://doi.org/
+                                                                                                   10.1016/j.enpol.2018.05.020.
+J.L. and H.L.; Methodology, T.Y.; Resources, T.Y., and R.L.; Validation,                      Liobikiene, _ G., Grincevi ciene, _ S., Bernatoniene,  _ J., 2016. Environmentally friendly
+R.L. and H.C.; Writing-Original Draft Preparation, T.Y., J.L. and H.L.;                            behaviour and green purchase in Austria and Lithuania. J. Clean. Prod. 142,
+Writing-Review & Editing, T.Y., R.L. and Y.G.                                                      3789e3797. https://doi.org/10.1016/j.jclepro.2016.10.084.
+                                                                                              Liu, Y.X., Hong, Z.S., Shi, X.P., 2018. Antecedents of residents’ repurchase intention of
+                                                                                                   green residential building: case study of Sino-Singapore Tianjin ecocity. Energy
+Declaration of competing interest                                                                  Procedia 152, 366e371. https://doi.org/10.1016/j.egypro.2018.09.150.
+                                                                                              Lopes, M.A., Antunes, C.H., Reis, A., Martins, N., 2016. Estimating energy savings
+                                                                                                   from behaviours using building performance simulations. Build. Res. Inf. 45,
+   The authors declare that they have no known competing                                           303e319. https://doi.org/10.1080/09613218.2016.1140000.
+ﬁnancial interests or personal relationships that could have                                  Mi, L., Yu, X., Yang, J., Lu, J., 2018. Inﬂuence of conspicuous consumption motivation
+appeared to inﬂuence the work reported in this paper.                                              on high-carbon consumption behavior of residentsdan empirical case study of
+                                                                                                   Jiangsu province, China. J. Clean. Prod. 1991, 167e181. https://doi.org/10.1016/
+                                                                                                   j.jclepro.2018.04.109.
+Acknowledgements                                                                              NBSC (National Bureau of Statistics of China), 2017. China Energy Statistical Year-
+                                                                                                   book. China Statistics Press, Beijing.
+                                                                                              Nilsson, A., Andersson, K., Bergstad, C.J., 2015. Energy behaviors at the ofﬁce: an
+   This work was ﬁnancially supported by the project of the Na-                                    intervention study on the use of equipment. Appl. Energy 146, 434e441.
+tional Natural Science Foundation of China (Grants No. 71603257,                                   https://doi.org/10.1016/j.apenergy.2015.02.045.
+71874188, 71904187 and 71603255), the Think Tank of Energy                                    Nolan, J.M., Schultz, P.W., Cialdini, R.B., Goldstein, N.J., Griskevicius, V., 2008.
+                                                                                                   Normative social inﬂuence is underdetected. Personal. Soc. Psychol. Bull. 34,
+Mining Economy (2018 Project for Cultural Evolution and Creation                                   913e923. https://doi.org/10.1177/0146167208316691.
+of CUMT 2018WHCC01), the General Financial Grant project from                                 Nowak, A., Rychwalska, A., Szamrej, J., 2014. Social, psychological and technological
+the China Postdoctoral Science Foundation (Grant No.                                               determinants of energy use. IEEE Technol. Soc. Mag. 33, 42e47. https://doi.org/
+                                                                                                   10.1109/mts.2014.2345207.
+2016M601920), the Fundamental Research Funds for the Central                                  Poruschi, L., Ambrey, C.L., 2016. On the conﬂuence of city living, energy saving
+Universities (Grant No. 2015QNA17), the Major Project of National                                  behaviours and direct residential energy consumption. Environ. Sci. Policy 66,
+Social Science Funding of China (Grant No. 16ZDA056), Jiangsu                                      334e343. https://doi.org/10.1016/j.envsci.2016.07.003.
+                                                                                              Prete, M.I., Piper, L., Rizzo, C., Pino, G., Capestro, M., Mileti, A., Pichierri, M.,
+Philosophy and Social Sciences Excellent Innovation Cultivation                                    Amatulli, C., Peluso, A.M., Guido, G., 2017. Determinants of Southern Italian
+Team (2017), the Innovation Team Program of the China University                                   households’ intention to adopt energy efﬁciency measures in residential
+of Mining and Technology (Grant No. 2015ZY003), the “13th Five                                     buildings.     J.     Clean.      Prod.     153,      83e91.     https://doi.org/10.1016/
+                                                                                                   j.jclepro.2017.03.157.
+Year” Brand Discipline Construction Funding Project of China Uni-
+                                                                                              Sardianou, E., 2007. Estimating energy conservation patterns of Greek households.
+versity of Mining and Technology (2017), the China Scholarship                                     Energy Policy 35, 3778e3791. https://doi.org/10.1016/j.enpol.2007.01.020.
+foundation.                                                                                   Song, X.N., Lu, Y.J., Shen, L.Y., Shi, X.P., 2018. Will China’s building sector participate
+                                                                                                   in emission trading system? Insights from modelling an owner’s optimal car-
+                                                                                                   bon reduction strategies. Energy Policy 118, 232e244. https://doi.org/10.1016/
+References                                                                                         j.enpol.2018.03.075.
+                                                                                              Tauﬁque, K.M.R., Vaithianathan, S., 2018. A fresh look at understanding green
+Anderson, K., Lee, S., 2016. An empirically grounded model for simulating norma-                   consumer behavior among young urban Indian consumers through the lens of
+    tive energy use feedback interventions. Appl. Energy 173, 272e282. https://doi:                Theory of Planned Behavior. J. Clean. Prod. 183, 46e55. https://doi.org/10.1016/
+    10.1016/j.apenergy.2016.04.063.                                                                j.jclepro.2018.02.097.
+Anderson, K., Lee, S., Menassa, C., 2014. Impact of social network type and structure         Taylor, M.A., Suzana, D., 2018. Network-agent based model for simulating the dy-
+    on modeling normative energy use behavior interventions. J. Comput. Civ. Eng.                  namic spatial network structure of complex ecological systems. Ecol. Model.
+    28, 30e39. https://doi:10.1061/(asce)cp.1943-5487.0000314.                                     389, 19e32. https://doi.org/10.1016/j.ecolmodel.2018.10.008.
+Ajzen, I., 2002. Residual effects of past on later behavior habituation and reasoned          Trotta, G., 2018. Factors affecting energy-saving behaviors and energy efﬁciency
+    action perspectives. Personal. Soc. Psychol. Rev. 6, 107e122. https://10.1207/                 investments in British households. Energy Policy 114, 529e539. https://doi.org/
+    S15327957PSPR0602_02.                                                                          10.1016/j.enpol.2017.12.042.
+Ajzen, I., Driver, B.L., 1991. Prediction of participation from behavior, normative and       Varela-Candamio, L., Novo-Corti, I., Teresa Garcia-Alvarez, M., 2018. The importance
+    control beliefs: an application of the theory of planned behavior. Leis. Sci. 13,              of environmental education in the determinants of green behavior: a meta-
+    185e200. https://doi.org/10.1080/01490409109513137.                                            analysis approach. J. Clean. Prod. 170, 1565e1578. https://doi.org/10.1016/
+Andrzej, N., Agnieszka, R., Jacek, S., 2014. Social, psychological and technological               j.jclepro.2017.09.214.
+    determinants of energy use. IEEE Technol. Soc. Mag. 33, 42e47. https://doi.org/           Vicente-Molina, M.A., Ferna      ndez-Sa inz, A., Izagirre-Olaizola, J., 2013. Environmental
+    10.1109/MTS.2014.2345207.                                                                      knowledge and other variables affecting pro-environmental behaviour: com-
+Belaid, F., Garcia, T., 2016. Understanding the spectrum of residential energy-saving              parison of university students from emerging and advanced countries. J. Clean.
+    behaviours: French evidence using disaggregated data. Energy Econ. 57,                         Prod. 61, 130e138. https://doi.org/10.1016/j.jclepro.2013.05.015.
+    204e214. https://doi.org/10.1016/j.eneco.2016.05.006.                                     Wang, P., Liu, Q., Qi, Y., 2013. Factors inﬂuencing sustainable consumption behav-
+Casalo, L.V., Escario, J.J., 2018. Heterogeneity in the association between environ-              iors: a survey of the rural residents in China. J. Clean. Prod. 63, 152e165. https://
+    mental attitudes and pro-environmental behavior: a multilevel regression                       doi.org/10.1016/j.jclepro.2013.05.007.
+    approach.       J.    Clean.    Prod.    175,    155e163.    https://doi.org/10.1016/     Wang, Q., Liu, P., Yuan, X., Cheng, X., Ma, R., Mu, R., Zuo, J., 2015. Structural evolution
+    j.jclepro.2017.11.237.                                                                         of household energy consumption: a China study. Sustainability 7, 3919e3932.
+Ek, K., So€derholm, P., 2010. The devil is in the details: household electricity saving            https://doi.org/10.3390/su7043919.
+12                                                              T. Yue et al. / Journal of Cleaner Production 252 (2020) 119623
+
+Wang, S., Fan, J., Zhao, D., Yang, S., Fu, Y., 2016. Predicting consumers’ intention to           Zhang, C.Y., Yu, B., Wang, J.W., Wei, Y.M., 2018. Impact factors of household energy-
+   adopt hybrid electric vehicles: using an extended version of the theory of                        saving behavior: an empirical study of Shandong Province in China. J. Clean.
+   planned behavior model. Transportation 43, 123e143. https://doi.org/10.1007/                      Prod. 185, 285e298. https://doi.org/10.1016/j.jclepro.2018.02.303.
+   s11116-014-9567-9.                                                                             Zhang, P., Shi, X.P., Sun, Y.P., Cui, J.B., Shao, S., 2019. Have China’s provinces achieved
+Winett, R.A., Leckliter, I.N., Chinn, D.E., Stahl, B., Love, S.Q., 1985. Effects of television       their targets of energy intensity reduction? Reassessment based on nighttime
+   modeling on residential energy conservation. J. Appl. Behav. Anal. 18, 33e44.                     lighting data. Energy Policy 128, 276e283. https://doi.org/10.1016/
+   https://doi.org/10.1901/jaba.1985.18-33.                                                          j.enpol.2019.01.014.
+Yue, T., Long, R.Y., Chen, H., 2013. Factors inﬂuencing energy-saving behavior of                 Zhou, K., Yang, S.L., 2016. Understanding household energy consumption behavior:
+   urban households in Jiangsu province. Energy Policy 62, 665e675. https://                         the contribution of energy big data analytics. Renew. Sustain. Energy Rev. 56,
+   doi.org/10.1016/j.enpol.2013.07.051.                                                              810e819. https://doi.org/10.1016/j.rser.2015.12.001.
+
