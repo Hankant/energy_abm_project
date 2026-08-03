@@ -16,8 +16,10 @@
         "type":  "journal article",
         "source_url":  "https://www.sciencedirect.com/science/article/pii/S0301421524002969",
         "intended_use":  "与你的项目高度相近，可用于支持单一政策与组合政策比较，以及组合政策通常优于单一工具的论点。",
-        "status":  "link_stub_saved",
-        "saved_file":  "Evaluating policy mix strategies for the energy transition using an agent-based macroeconomic model.txt"
+        "status":  "full_pdf_saved",
+        "saved_file":  "../literature_pdf_library/Nieddu_et_al_2024_Energy_Policy_114276.pdf",
+        "doi":  "10.1016/j.enpol.2024.114276",
+        "sha256":  "A587BB69BACB4FB30B473C89BEFFA79C3080FE7111F5F0FE60A5244694273F22"
     },
     {
         "title":  "A framework for policy mix analysis: assessing energy poverty policies",
@@ -138,5 +140,17 @@
         "intended_use":  "如后续延展到居民住宅、建筑能效与住宅低碳用能，这篇很值得读，可支撑中国绿色建筑领域的政策组合与治理演进分析。",
         "status":  "pdf_saved",
         "saved_file":  "Fostering sustainable transition policy mix and governance evolution of China\u0027s green building sector based on large-scale text analysis (2004-2024).pdf"
+    },
+    {
+        "title":  "An in-depth analysis of the evolution of the policy mix for the sustainable energy transition in China from 1981 to 2020",
+        "year":  2020,
+        "language":  "English (China-related)",
+        "type":  "journal article",
+        "source_url":  "https://www.sciencedirect.com/science/article/pii/S0306261920301239",
+        "intended_use":  "系统分析1981—2020年中国可持续能源转型政策组合的密度、强度、工具组合及分层、校准、替代和排序演进。",
+        "status":  "full_pdf_saved",
+        "saved_file":  "../literature_pdf_library/An in-depth analysis of the evolution of the policy mix for the sustainable energy transition in China from 1981 to 2020.pdf",
+        "doi":  "10.1016/j.apenergy.2020.114611",
+        "sha256":  "908AEB0F45EC3678415C4D422091772CDC5D10F754A4956D21A6203BDCC11DE3"
     }
 ]
